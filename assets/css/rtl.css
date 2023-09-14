@@ -1,0 +1,778 @@
+/*-----------------------[Table of contents]------------------------
+ 
+
+Background: #3f4449 
+Content: #888888, #ffffff, #3f4449, #73cde1
+
+a (visited): #3f4449
+a (standard): #3f4449   
+a (hover):  #3f4449  
+a (active): #3f4449
+
+------------------------------------------------------------------ */
+
+/************************* 1.Default CSS **************************/
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  background: #f8f9fd;
+  width: auto;
+  height: 100%;
+  color: #ffffff;
+  font-family:Arial, Helvetica,"Inter", sans-serif;
+  margin: 0;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+a:focus,
+a {
+  outline: none;
+  text-decoration: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+svg,
+img {
+  vertical-align: middle;
+}
+section {
+  padding: 50px 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.mtb-0 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.medium-font {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.center-tittle {
+  font-size: 16px;
+  line-height: 24px;
+  color: #13151c;
+  text-align: center;
+}
+
+.md-lg-font {
+  font-size: 20px;
+  line-height: 24px;
+}
+.sm-text {
+  font-size: 18px;
+  line-height: 24px;
+}
+.sm-md-text {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.sm-sm-text {
+  font-size: 10px;
+
+}
+.b-text {
+  color: #12151c;
+}
+.second-color {
+  color: #888888;
+}
+.primary-color {
+  color: #73cde1;
+}
+
+/************************* 2.Header CSS **************************/
+
+.inter-400 {
+  font-weight: 400;
+}
+.inter-700 {
+  font-weight: 700;
+}
+.inter-500 {
+  font-weight: 500;
+}
+.invoice-container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 30px 15px;
+}
+.content-min-width {
+  padding: 50px 50px 30px;
+}
+.logo img {
+  height: 60px;
+  width: auto;
+}
+.invoice-logo-content {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.invo-head-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.invoice-content-wrap {
+  background: #fff;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.invo-num-title {
+  width: 60%;
+}
+.invo-no {
+  width: 50%;
+  font-size: 16px;
+  line-height: 24px;
+}
+.invo-num {
+  color: #888888;
+  padding-right: 20px;
+  font-size: 16px;
+  line-height: 24px;
+}
+.invo-head-wrap.invoi-date-wrap {
+  margin-top: 20px;
+}
+.invo-cont-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.invoice-header-contact {
+  display: inline-flex;
+  padding-top: 36px;
+}
+.invo-cont-wrap.invo-contact-wrap {
+  margin-left: 30px;
+}
+.invo-social-name {
+  padding-right: 10px;
+}
+.text-invoice {
+  background-image: url("../images/header/back-img.svg");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  top: auto;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-size: auto;
+  background-position: bottom center;
+}
+
+/************************* 3.Invoice Content CSS **************************/
+
+.image-container {
+  width: 100%; /* This will make the container take the full width of its parent */
+  height: 100%; /* This will make the container take the full height of its parent */
+  overflow: hidden; /* This will hide any part of the image that exceeds the container's dimensions */
+}
+
+.image-container img {
+  display: block;
+  max-width: 100%; /* This will ensure the image doesn't exceed the container's width */
+  height: auto; /* This will maintain the image's aspect ratio */
+  width: 100%; /* This will make the image take the full width of the container */
+  object-fit: cover; /* This will ensure the image covers the entire container without distorting its aspect ratio */
+}
+
+
+.container {
+  margin: 0 auto;
+  padding: 0 50px;
+}
+.invo-to {
+  color: #12151c;
+}
+.invo-to-owner {
+  color: #73cde1;
+  margin: 10px 0;
+}
+.invo-vat {
+  color: #73cde1;
+  margin: 1px 0;
+}
+p.second-color.sm-sm-text .multi-lang { 
+  text-align: center!important;
+}
+.padding-20 {
+  padding-right:15px;
+}
+span.line-bstn-en {
+  position: absolute;
+  border-right: 3px solid #73cde1;
+  height: 10px;
+  left: -10px;
+}
+
+span.line-bstn-ar {
+  position: absolute;
+  border-right: 3px solid #73cde1;
+  height: 10px;
+  right: -10px;
+}
+span.col-line-bstn {
+  content: "";
+  position: relative;
+  border-right: 1px solid #242424c4;
+  height: 6em;
+ 
+}
+
+span.mhg-line {
+  border-bottom: 1px solid #73cde1 ;
+ 
+  margin: 3px 0;
+}
+ 
+
+
+
+.invoice-owner-conte-wrap {
+  display: flex;
+  justify-content: space-between;
+  -webkit-box-pack: justify;
+}
+.invo-to-wrap {
+  text-align: right;
+}
+.invo-pay-to-wrap {
+  text-align: left;
+}
+.invo-vat-to-wrap {
+  text-align: right;
+  display: inline-grid;
+}
+.invo-owner-address {
+  color: #888888;
+}
+.invoice-table.totals thead th{
+
+  width: 33%;
+
+}
+
+.flex { 
+  display: flex;
+  justify-content: space-around;
+}
+
+table.invoice-table.totals.bstn-detail-table { 
+  width: 60%;
+}
+.table-wrapper.amount {
+  width: 30%;
+}
+.ar-text { 
+  text-align: right;
+  dir:rtl;
+}
+
+.table-wrapper {
+  padding: 30px 20px;
+}
+.invoice-table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #000;
+  background-color: #ffffff;
+}
+tr, th, td {
+  border: 1px solid #000;
+}
+.invoice-table td,
+.invoice-table th {
+  text-align: center;
+}
+.invoice-table td {
+  color: #888888;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 20px 0;
+}
+.invoice-table thead th {
+  color: #12151c;
+  padding: 10px 0;
+}
+.invo-tb-body .invo-tb-row {
+  border-bottom: 1px solid #888888;
+}
+.invo-tb-body .invo-tb-row:last-child {
+  border-bottom: none;
+}
+.invo-tb-body {
+  border-bottom: 2px solid #12151c;
+  border-top: 2px solid #12151c;
+}
+.serv-wid {
+  width: 32%;
+}
+.desc-wid {
+  width: 36%;
+}
+.qty-wid {
+  width: 10%;
+}
+.pric-wid {
+  width: 12%;
+}
+.tota-wid {
+  width: 10%;
+}
+.invoice-table th.total-head,
+.invoice-table td.total-data {
+  text-align: center;
+}
+.addi-info-title {
+  color: #12151c;
+  margin: 0 0 10px;
+}
+.add-info-desc {
+  font-size: 14px;
+  line-height: 22px;
+  color: #888888;
+}
+.invo-total-price {
+  font-weight: 500;
+}
+.invo-addition-wrap {
+  display: flex;
+}
+.invo-add-info-content {
+  width: 50%;
+}
+.invo-bill-total {
+  width: 50%;
+  position: relative;
+}
+.invo-bill-total table {
+  width: 85%;
+  border-collapse: collapse;
+  white-space: nowrap;
+  float: left;
+}
+.invo-total-table td.invo-total-data,
+.invo-total-table td.invo-total-price {
+  text-align: left;
+}
+.tax-row.bottom-border,
+.disc-row.bottom-border {
+  border-bottom: 2px solid #12151c;
+}
+.hotel-sub {
+  padding-right: 70px !important;
+}
+.invo-total-table .tax-row td,
+.invo-grand-total td {
+  padding: 20px 0;
+}
+
+/************************* 4.Bottom Content CSS **************************/
+
+.agency-bottom-content {
+  border-radius: 0px 0px 20px 20px;
+  padding: 50px 0;
+}
+.invo-btns {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 1px;
+}
+.invo-buttons-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.invo-buttons-wrap .invo-btns .print-btn {
+  background: #73cde1;
+  padding: 12px 24px;
+  border-radius: 0px 24px 24px 0px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+}
+.invo-buttons-wrap .invo-btns .download-btn {
+  background: #00d061;
+  padding: 12px 24px;
+  border-radius: 24px 0px 0px 24px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+}
+.invo-btns span {
+  padding-right: 10px;
+}
+.invo-note-wrap,
+.note-title {
+  display: flex;
+  align-items: center;
+}
+.invo-note-wrap {
+  padding-top: 30px;
+}
+.note-title span,
+.note-desc {
+  padding-right: 10px;
+}
+
+/************************* 7. Bs CSS **************************/
+
+.content-min-width.bstn-header {
+  padding: 20px 50px 0px;
+}
+.content-min-width.bstn-header .invoice-logo {
+  position: relative;
+  top: -9px;
+}
+.content-min-width.bstn-header .invoice-barcode {
+  position: relative;
+  top: -9px;
+}
+
+.simple-vat-section { 
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.bstn-invo-no-date-wrap {
+  background-color: #73cde1;
+  padding: 8px 50px;
+  display: flex;
+  dir:rtl;
+  justify-content: space-between;
+}
+.bstn-invo-nnum,
+.bstn-invo-ddate {
+  padding-right: 10px;
+}
+.invoice-timing-wrap {
+  display: flex;
+  justify-content: flex-start;
+}
+.invo-time-col {
+  display: inline-block;
+  /* padding: 0 18px 0 12px; */
+  position: relative;
+}
+.Invoico-info p,
+.Invoico-info {
+  position: relative;
+}
+.Invoico-info-ar{
+
+  text-align: right;
+  direction: rtl;
+
+}
+ /* .Invoico-info .circle:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50px;
+  background-color: #000000;
+  right: -16px;
+  top: 7px;
+} */
+/* .Invoico-info:before {
+  content: "";
+  position: absolute;
+  border-right: 2px solid #73cde1;
+  height: 39px;
+  top: 12px;
+  right: -13px;
+}  */
+.invoice-timing-wrap {
+  padding: 0px 20px;
+}
+.bstn-detail-col {
+  display: inline-flex;
+}
+.bstn-detail-col.border-bottom {
+  border-bottom: 1px solid #888888;
+  padding-bottom: 20px;
+}
+.bstn-detail-wrap {
+  display: grid;
+  grid-column: 2;
+  grid-template-columns: auto auto auto auto;
+  gap: 20px 30px;
+  grid-row: 2;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 30px;
+  border: 2px solid #12151c;
+}
+.bstn-type,
+.invo-add-info-content.bstn-term-cond-content,
+.invo-bill-total.bstn-invo-total {
+  width: 50%;
+}
+.term-con-list {
+  padding: 0 16px 0 0;
+  margin: 0;
+}
+.bstn-conta-mail-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0 0;
+}
+.bstn-contact a,
+.bstn-mail a {
+  vertical-align: middle;
+}
+/* Responsive CSS for the entire invoice */
+
+/* Define a breakpoint for tablets and smaller screens */
+@media only screen and (max-width: 768px) {
+
+  /* Adjust the layout for the simple-vat-section */
+  .simple-vat-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  /* Adjust the layout for table-wrapper and its child elements */
+  .table-wrapper {
+    padding: 20px 0;
+    overflow-x: auto; /* Allows horizontal scrolling if the table exceeds the screen width */
+  }
+
+  .invoice-table {
+    width: 100%;
+  }
+
+  /* Adjust the layout for the bstn-detail-wrap */
+  .bstn-detail-wrap {
+    grid-template-columns: 1fr; /* Makes it a single column layout */
+    gap: 20px;
+  }
+
+  /* Adjust the layout for the bstn-conta-mail-wrap */
+  .bstn-conta-mail-wrap {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .invoice-container {
+    padding: 15px;
+  }
+
+  .content-min-width {
+    padding: 20px 20px 15px;
+  }
+
+  .invoice-logo-content, .invo-head-wrap, .invoice-header-contact, .invo-cont-wrap {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .invo-head-wrap.invoi-date-wrap, .invo-cont-wrap.invo-contact-wrap {
+    margin-top: 20px;
+  }
+
+  .invoice-owner-conte-wrap {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .invo-to-wrap, .invo-pay-to-wrap, .invo-vat-to-wrap {
+     
+    margin-bottom: 20px;
+  }
+
+  .invo-bill-total table {
+    width: 100%;
+  }
+
+  .invo-addition-wrap {
+    flex-direction: column;
+  }
+
+  .invo-add-info-content, .invo-bill-total {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .invo-buttons-wrap {
+    flex-direction: column;
+  }
+
+  .invo-btns {
+    margin: 10px 0;
+  }
+  .Invoico-info p {
+    margin: 10px 0 !important;
+  }
+  b.b-text.padding-20 { 
+    float: left;
+  }
+
+  span.col-line-bstn {
+ 
+    height: 1em;
+}
+
+}
+
+/* Define a breakpoint for mobile screens */
+@media only screen and (max-width: 480px) {
+
+  section {
+    padding: 30px 0;
+  }
+
+  .invoice-container {
+    padding: 10px;
+  }
+
+  .content-min-width {
+    padding: 15px 15px 10px;
+  }
+
+  .invoice-logo-content, .invo-head-wrap, .invoice-header-contact, .invo-cont-wrap {
+    gap: 10px;
+  }
+
+  .invo-head-wrap.invoi-date-wrap, .invo-cont-wrap.invo-contact-wrap {
+    margin-top: 10px;
+  }
+
+  .invoice-owner-conte-wrap {
+    gap: 10px;
+  }
+
+  .invo-to-wrap, .invo-pay-to-wrap, .invo-vat-to-wrap {
+    margin-bottom: 10px;
+  }
+
+  .invo-bill-total table {
+    width: 100%;
+  }
+
+  .invo-addition-wrap {
+    gap: 10px;
+  }
+
+  .invo-add-info-content, .invo-bill-total {
+    margin-bottom: 10px;
+  }
+
+  .invo-buttons-wrap {
+    gap: 10px;
+  }
+
+  .invo-btns {
+    margin: 5px 0;
+  }
+
+}
+/* Responsive CSS for the table */
+
+/* Define a breakpoint for tablets and smaller screens */
+@media only screen and (max-width: 768px) {
+
+  /* Make the table wrapper horizontally scrollable */
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .bstn-invo-no-date-wrap {
+    padding: 6px 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+  .invoice-table.bstn-detail-table {
+    min-width: 1200px; /* Adjust this value based on your needs */
+  }
+
+  /* Adjust table headers and data for better visibility */
+  .invoice-table.bstn-detail-table th, .invoice-table.bstn-detail-table td {
+    padding: 8px;
+    font-size: 12px; /* Adjust font size for better fit */
+    white-space: nowrap; /* Prevents the content from breaking into the next line */
+  }
+
+}
+
+/* Define a breakpoint for mobile screens */
+@media only screen and (max-width: 480px) {
+
+  .invoice-table.bstn-detail-table th, .invoice-table.bstn-detail-table td {
+    font-size: 10px; /* Further reduce font size for mobile screens */
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  /* Stack contact and mail vertically */
+  .bstn-conta-mail-wrap > div {
+      display: block;
+      width: 100%;
+      text-align: center; /* Center the content */
+      margin-bottom: 10px; /* Add some space between them */
+  }
+
+  /* Stack print and download buttons vertically */
+  .invo-buttons-wrap > div {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px; /* Add some space between them */
+  }
+
+  /* Ensure note text doesn't overflow its container */
+  .invo-note-wrap h3 {
+      word-wrap: break-word; /* Break the text into next line */
+  }
+  .invo-buttons-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.bstn-invo-no-date-wrap {
+  padding: 12px 20px;
+  display: flex;
+  flex-wrap: unset !important;
+  dir:rtl;
+  justify-content: space-between;
+}
+
+}
+
+td.md-lg-font.invo-table-title.full-width-cell.inter-700 { 
+  color: #000;
+  font-weight: 900;
+}
+ 
