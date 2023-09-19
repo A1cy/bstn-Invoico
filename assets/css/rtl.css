@@ -1099,3 +1099,67 @@ td.md-lg-font.invo-table-title.full-width-cell.inter-700 {
 
 
 
+.table-wrapper {
+  overflow-x: auto; /* Allows table to scroll horizontally if it becomes too wide for the screen */
+}
+
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* This helps in maintaining uniform columns */
+}
+
+/* Headings */
+.invo-table-title {
+  background-color: #f2f2f2; 
+  padding: 10px 5px; 
+}
+
+/* Rows and Data */
+.invo-tb-row {
+  border-bottom: 1px solid #e0e0e0; 
+}
+
+.invo-tb-data {
+  padding: 10px 5px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* On smaller screens, display data title before the data content */
+@media (max-width: 768px) {
+  .invo-tb-data[data-title]:before {
+      content: attr(data-title);
+      display: inline-block;
+      font-weight: bold;
+      margin-right: 10px;
+  }
+
+  .invo-tb-data {
+      display: block;
+      text-align: right;
+      width: 100%;
+      box-sizing: border-box;
+      border-bottom: 1px solid #e0e0e0;
+      position: relative;
+      padding-left: 50px; /* Make space for the data title */
+  }
+
+  .invo-tb-data[data-title]:before {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  .responsive-table thead {
+      display: none; /* Hide headers */
+  }
+
+  .invo-tb-row {
+      display: block;
+      margin-bottom: 0.625em;
+  }
+}
