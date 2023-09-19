@@ -12,6 +12,8 @@ a (active): #3f4449
 ------------------------------------------------------------------ */
 
 /************************* 1.Default CSS **************************/
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:600,700';
+ 
 
 html {
   scroll-behavior: smooth;
@@ -21,8 +23,7 @@ body {
   background: #f8f9fd;
   width: auto;
   height: 100%;
-  color: #ffffff;
-  font-family:Arial, Helvetica,"Inter", sans-serif;
+  font-family:'Open Sans', Arial, Helvetica,"Inter", sans-serif;
   margin: 0;
 }
 
@@ -732,6 +733,7 @@ tr, th, td {
   .invoice-table.bstn-detail-table th, .invoice-table.bstn-detail-table td {
     font-size: 10px; /* Further reduce font size for mobile screens */
   }
+  
 
 }
 
@@ -769,10 +771,331 @@ tr, th, td {
   justify-content: space-between;
 }
 
+.responsive-table tbody,
+.responsive-table tr,
+.responsive-table th,
+.responsive-table td {
+  display: block;
+  padding: 0;
+  text-align: left;
+  white-space: normal;
+}
+
+
 }
 
 td.md-lg-font.invo-table-title.full-width-cell.inter-700 { 
   color: #000;
+  text-align: center;
   font-weight: 900;
 }
  
+/* res-table */
+
+.rwd-table {
+  margin: auto;
+  min-width: 300px;
+  max-width: 100%;
+  border-collapse: collapse;
+}
+
+.rwd-table tr:first-child {
+  border-top: none;
+ 
+}
+
+.rwd-table tr {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #f5f9fc;
+}
+
+.rwd-table tr:nth-child(odd):not(:first-child) {
+  background-color: #ebf3f9;
+}
+
+.rwd-table th {
+  display: none;
+}
+
+.rwd-table td {
+  display: block;
+}
+
+.rwd-table td:first-child {
+  margin-top: .5em;
+}
+
+.rwd-table td:last-child {
+  margin-bottom: .5em;
+}
+
+.rwd-table td:before {
+  content: attr(data-th) ": ";
+  font-weight: bold;
+  width: 120px;
+  display: inline-block;
+  color: #000;
+}
+
+.rwd-table th,
+.rwd-table td {
+  text-align: left;
+}
+
+.rwd-table {
+  color: #333;
+  border-radius: .4em;
+  overflow: hidden;
+}
+
+.rwd-table tr {
+  border-color: #bfbfbf;
+}
+
+.rwd-table th,
+.rwd-table td {
+  padding: .5em 1em;
+}
+@media screen and (max-width: 601px) {
+  .rwd-table tr:nth-child(2) {
+    border-top: none;
+  }
+}
+@media screen and (min-width: 600px) {
+  .rwd-table tr:hover:not(:first-child) {
+    background-color: #d8e7f3;
+  }
+  .rwd-table td:before {
+    display: none;
+  }
+  .rwd-table th,
+  .rwd-table td {
+    display: table-cell;
+    padding: .25em .5em;
+  }
+  .rwd-table th:first-child,
+  .rwd-table td:first-child {
+    padding-left: 0;
+  }
+  .rwd-table th:last-child,
+  .rwd-table td:last-child {
+    padding-right: 0;
+  }
+  .rwd-table th,
+  .rwd-table td {
+    padding: 1em !important;
+  }
+}
+
+
+ 
+/* 2 */
+
+.responsive-table {
+  width: 100%;
+  margin-bottom: 1.5em;
+  border-spacing: 0;
+}
+
+.responsive-table thead {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  padding: 0;
+  border: 0;
+ 
+  overflow: hidden;
+}
+
+@media (min-width: 48em) {
+  .responsive-table thead {
+      position: relative;
+      clip: auto;
+      height: auto;
+      width: auto;
+      overflow: auto;
+  }
+}
+
+.responsive-table thead th {
+  background-color: #73cde1;
+  border: 1px solid #000;
+  font-weight: normal;
+  text-align: center;
+ 
+}
+
+.responsive-table thead th:first-of-type {
+  text-align: left;
+}
+
+
+
+@media (min-width: 48em) {
+  .responsive-table tr {
+      /* display: table-row-group; */
+  }
+  
+}
+
+.responsive-table th,
+.responsive-table td {
+  padding: 0.5em;
+  vertical-align: middle;
+}
+
+@media (min-width: 30em) {
+  .responsive-table th,
+  .responsive-table td {
+      padding: 0.75em 0.5em;
+  }
+  
+}
+
+@media (min-width: 48em) {
+  .responsive-table th,
+  .responsive-table td {
+      display: table-cell;
+      padding: 0.5em;
+  }
+}
+
+@media (min-width: 62em) {
+  .responsive-table th,
+  .responsive-table td {
+      padding: 0.75em 0.5em;
+  }
+}
+
+@media (min-width: 75em) {
+  .responsive-table th,
+  .responsive-table td {
+      padding: 0.50em;
+  }
+}
+
+.responsive-table tbody tr {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 48em) {
+  .responsive-table tbody tr {
+      display: table-row;
+   }
+}
+
+.responsive-table tbody tr:last-of-type {
+  margin-bottom: 0;
+}
+
+ 
+
+
+@media (min-width: 30em) {
+  .responsive-table tbody th[scope=row] {
+      border-left: 1px solid #73cde1;
+      border-bottom: 1px solid #73cde1;
+  }
+}
+
+@media (min-width: 48em) {
+  .responsive-table tbody th[scope=row] {
+      background-color: transparent;
+      color: #000001;
+      text-align: left;
+  }
+}
+
+.responsive-table tbody td {
+  text-align: right;
+}
+
+@media (min-width: 48em) {
+  .responsive-table tbody td {
+     
+      text-align: center;
+  }
+}
+
+/* @media (min-width: 48em) {
+  .responsive-table tbody td:last-of-type {
+      border-right: 1px solid #73cde1;
+  }
+} */
+
+.responsive-table tbody td[data-title]:before {
+  content: attr(data-title);
+  float: left;
+  font-size: 0.5em;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+@media (min-width: 30em) {
+  .responsive-table tbody td[data-title]:before {
+      font-size: 0.9em;
+  }
+}
+
+@media (min-width: 48em) {
+  .responsive-table tbody td[data-title]:before {
+      content: none;
+  }
+}
+
+
+/* sm-table */
+
+.custom-invoice-table {
+    
+    cellspacing: 0;
+    cellpadding: 0;
+    margin: auto;
+}
+
+ 
+
+.right-align {
+    text-align: right;
+    width: 30%;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.center-align {
+    text-align: center;
+    width: 40%;
+    padding: 10px;
+    font-size: 12px;
+    font-weight:300
+}
+
+.left-align {
+    text-align: left;
+    width: 30%;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.separator td {
+    padding: 10px;
+    border-bottom: 1px solid #dfdfdf;
+}
+.responsive-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.responsive-table th {
+  width: calc(100% / 11); /* As there are 11 columns */
+  overflow: hidden; /* This will ensure content doesn't overflow */
+  text-overflow: ellipsis; /* This will add ... for longer content */
+  white-space: nowrap; /* This will prevent content from wrapping to the next line */
+}
+/* CSS for normal screens */
+
+/* You might want to use a media query to target normal screens if necessary. For this example, I'm omitting the media query. */
+
+
+
