@@ -250,7 +250,7 @@ tr {
 .invo-buttons-wrap .invo-btns .print-btn {
   background: #73cde1;
   padding: 12px 24px;
-  border-radius: 0 24px 24px 0;
+  border-radius: 24px 24px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -462,11 +462,7 @@ tr {
 }
 @media only screen and (max-width: 768px) {
   
-  .invo-buttons-wrap > div {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-  }
+
   .invo-note-wrap h3 {
     word-wrap: break-word;
   }
@@ -939,4 +935,30 @@ body {
  justify-content: center;
 }
 
+}
+.td-data {
+  padding: 10px;
+  border-bottom: 1px solid #e1e1e1; /* Light gray divider */
+}
+
+.td-data div {
+  margin-bottom: 6px; /* Spacing between different data sets */
+}
+
+.data-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 5px; /* Spacing between title and value */
+  display: inline-block; /* To keep title and value on the same line */
+}
+
+.td-data div:last-child {
+  margin-bottom: 0; /* Remove margin from the last data set */
+}
+
+/* You can consider adding icons before these classes, for example: */
+.data-warranty:before,
+.data-qty:before {
+  content: "\1F4CC"; /* Just a sample Unicode, replace with your actual icons */
+  margin-right: 5px;
 }
