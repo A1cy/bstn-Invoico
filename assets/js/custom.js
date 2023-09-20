@@ -40,7 +40,7 @@
           canvasImageHeight
         );
       }
-      pdf.save('MHG-Sales-Invoico.pdf');
+      pdf.save('MHG-Sales-invoice.pdf');
     });
   });
 })(jQuery); // End of use strict
