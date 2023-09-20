@@ -1100,66 +1100,584 @@ td.md-lg-font.invo-table-title.full-width-cell.inter-700 {
 
 
 .table-wrapper {
-  overflow-x: auto; /* Allows table to scroll horizontally if it becomes too wide for the screen */
+    overflow-x: auto; /* Allows table to scroll horizontally if it becomes too wide for the screen */
 }
 
 .responsive-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed; /* This helps in maintaining uniform columns */
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* This helps in maintaining uniform columns */
 }
 
 /* Headings */
 .invo-table-title {
-  background-color: #f2f2f2; 
-  padding: 10px 5px; 
+    background-color: #f2f2f2; 
+    padding: 10px 5px; 
 }
 
 /* Rows and Data */
 .invo-tb-row {
-  border-bottom: 1px solid #e0e0e0; 
+    border-bottom: 1px solid #e0e0e0; 
 }
 
 .invo-tb-data {
-  padding: 10px 5px;
-  text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    padding: 10px 5px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* On smaller screens, display data title before the data content */
 @media (max-width: 768px) {
-  .invo-tb-data[data-title]:before {
-      content: attr(data-title);
-      display: inline-block;
-      font-weight: bold;
-      margin-right: 10px;
+    .invo-tb-data[data-title]:before {
+        content: attr(data-title);
+        display: inline-block;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .invo-tb-data {
+        display: block;
+        text-align: right;
+        width: 100%;
+        box-sizing: border-box;
+        border-bottom: 1px solid #e0e0e0;
+        position: relative;
+        padding-left: 50px; /* Make space for the data title */
+    }
+
+    .invo-tb-data[data-title]:before {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .responsive-table thead {
+        display: none; /* Hide headers */
+    }
+
+    .invo-tb-row {
+        display: block;
+        margin-bottom: 0.625em;
+    }
+}
+/* Basic styling */
+.table-container {
+  overflow-x: auto; 
+  margin: 20px 0;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.th-header {
+  background-color: #2C3E50;
+  color: #ECF0F1;
+  padding: 15px;
+  border: 1px solid #34495E;
+  font-size: 15px;
+}
+
+.tbody-section .tr-row:hover {
+  background-color: #f5f5f7;
+}
+
+.td-data {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .td-data {
+      font-size: 12px;
+      padding: 8px;
   }
 
-  .invo-tb-data {
+  .th-header {
+      font-size: 14px;
+      padding: 10px;
+  }
+}
+
+/* Print styling */
+/* @media print {
+  .table-container {
+      box-shadow: none;
+  }
+
+  .custom-table {
+      border: 1px solid #000;
+  }
+
+  .th-header, .td-data {
+      padding: 10px;
+      border: 1px solid #000;
+  }
+} */
+/* Basic and Large Screen styling remains unchanged */
+/* ... [previous CSS rules] ... */
+
+/* Mobile responsive styling */
+@media (max-width: 768px) {
+
+  .custom-table thead {
+      display: none; /* Hide table headers */
+  }
+
+  .tbody-section .tr-row {
+      margin-bottom: 0.625rem;
+      display: block;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .td-data {
       display: block;
       text-align: right;
-      width: 100%;
-      box-sizing: border-box;
+      padding: 10px;
+      border: none;
       border-bottom: 1px solid #e0e0e0;
       position: relative;
-      padding-left: 50px; /* Make space for the data title */
+      font-size: 12px;
   }
 
-  .invo-tb-data[data-title]:before {
+  .td-data::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
       position: absolute;
       left: 10px;
       top: 50%;
       transform: translateY(-50%);
+      background-color: #ECF0F1;
+      padding: 5px;
+      border-radius: 5px;
+      font-size: 10px;
   }
 
-  .responsive-table thead {
-      display: none; /* Hide headers */
-  }
-
-  .invo-tb-row {
-      display: block;
-      margin-bottom: 0.625em;
+  .td-data:last-of-type {
+      border-bottom: none;
   }
 }
+.table-wrapper.flex {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.invoice-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.invo-tb-body .invo-tb-header {
+  background-color: #f5f5f5;
+}
+
+.invo-table-title {
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  font-weight: 700;
+}
+
+/* Mobile responsive styling */
+@media (max-width: 768px) {
+  .invo-tb-body .invo-tb-header {
+      display: none; /* Hide table headers */
+  }
+
+  .invo-tb-body tr {
+      margin-bottom: 0.625rem;
+      display: block;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .invo-tb-body td {
+      display: block;
+      text-align: right;
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid #e0e0e0;
+      position: relative;
+  }
+
+  .invo-tb-body td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #ECF0F1;
+      padding: 5px;
+      border-radius: 5px;
+      font-size: 10px;
+  }
+
+  .invo-tb-body td:last-of-type {
+      border-bottom: none;
+  }
+}
+/* Basic and large screen styling */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.td-header, .td-data {
+    padding: 10px 15px;
+    text-align: left;
+    border: 1px solid #e0e0e0;
+}
+
+.td-header {
+    background-color: #ECF0F1;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.tr-header td {
+    font-weight: 700;
+}
+
+/* Mobile responsive styling */
+@media (max-width: 768px) {
+    .tbody-section .tr-row {
+        margin-bottom: 0.625rem;
+        display: block;
+        border: 1px solid #e0e0e0;
+    }
+
+    .td-data {
+        display: block;
+        text-align: right;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #e0e0e0;
+        position: relative;
+        font-size: 12px;
+    }
+
+    .td-data::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #ECF0F1;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 10px;
+    }
+
+    .td-data:last-of-type {
+        border-bottom: none;
+    }
+}
+/* General styling for large screens */
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Inter', sans-serif;
+}
+
+.summary-row td, .summary-row th {
+  padding: 10px 15px;
+  border: 1px solid #e0e0e0;
+}
+
+.td-center {
+  text-align: left;
+  position: relative;
+  padding-right: 15%;
+}
+
+.td-center::after {
+  content: attr(data-arabic);
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-style: italic;
+}
+
+.td-value {
+  text-align: center;
+}
+
+.footer-row .footer-text {
+  text-align: center;
+  font-weight: 700;
+  background-color: #ECF0F1;
+  font-size: 16px;
+}
+
+/* Mobile responsive styling */
+@media (max-width: 768px) {
+  .summary-row td, .summary-row th {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+  }
+
+  .td-center {
+      text-align: center;
+      padding-right: 0;
+  }
+
+  .td-center::after {
+      position: initial;
+      top: initial;
+      right: initial;
+      transform: none;
+      display: block;
+      margin-top: 5px;
+  }
+}
+/* General styling for large screens */
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Inter', sans-serif;
+}
+
+.summary-row td {
+  padding: 10px 15px;
+  border: 1px solid #e0e0e0;
+  position: relative;
+}
+
+.td-combined::before {
+  content: attr(data-label-eng);
+  display: inline-block;
+  float: left;
+}
+
+.td-combined::after {
+  content: attr(data-label-ar);
+  display: inline-block;
+  float: right;
+}
+
+.footer-row .footer-text {
+  text-align: center;
+  font-weight: 700;
+  background-color: #ECF0F1;
+  font-size: 16px;
+}
+
+/* Mobile responsive styling */
+@media (max-width: 768px) {
+  .td-combined::before, .td-combined::after {
+      position: absolute;
+      top: 10px;
+      white-space: nowrap;
+  }
+
+  .td-combined::before {
+      left: 10px;
+      right: auto;
+  }
+
+  .td-combined::after {
+      left: auto;
+      right: 10px;
+  }
+}
+.summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+}
+
+.summary-row {
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+    align-items: center;
+}
+
+.td-value {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f4f4f4;
+}
+
+.td-eng, .td-ar {
+    flex: 2;
+    padding: 10px 15px;
+}
+
+.footer-row td {
+    padding: 10px 15px;
+    font-weight: 700;
+    text-align: center;
+    background-color: #ECF0F1;
+}
+
+/* Mobile responsive styling */
+@media (max-width: 768px) {
+    .td-eng, .td-ar {
+        display: none; /* hide the English and Arabic columns on mobile */
+    }
+
+    .td-value::before {
+        content: attr(data-label-eng) " | " attr(data-label-ar);
+        display: block;
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+}
+.table-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  flex-wrap: wrap; /* In case the container width is smaller than the sum of both tables */
+}
+
+.summary-table, .custom-table {
+  width: 48%; /* Taking a little less than half to ensure some space between the tables */
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Your previous styles for .summary-table */
+
+.custom-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+.td-header {
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.td-data {
+  padding: 10px;
+}
+
+/* Responsive: Stacking tables on smaller screens */
+@media (max-width: 768px) {
+  .summary-table, .custom-table {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+}
+
+.custom-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+.td-header, .td-data {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Responsive section starts here */
+
+/* By default, the data-label will not be shown */
+.td-data::before {
+  content: none;
+}
+
+@media (max-width: 768px) {
+  /* Re-styling the table headers to be hidden on small screens */
+  .tr-header {
+      display: none; 
+  }
+
+  .tbody-section, .tr-row {
+      width: 100%;
+      display: block;
+  }
+
+  .td-data {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+  }
+
+  /* Displaying the data-label before each data cell */
+  .td-data::before {
+      content: attr(data-label) ;
+      display: inline-block;
+      width: 50%;
+      padding: 10px;
+      font-weight: bold;
+      border-bottom: 1px solid #e0e0e0;
+  }
+}
+.custom-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+.td-header, .td-data {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Responsive section starts here */
+
+/* By default, the data-label will not be shown */
+.td-data::before {
+  content: none;
+}
+
+@media (max-width: 768px) {
+  /* Re-styling the table headers to be hidden on small screens */
+  .tr-header {
+      display: none; 
+  }
+
+  .tbody-section, .tr-row {
+      width: 100%;
+      display: block;
+  }
+
+  .td-data {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+  }
+
+  /* Displaying the data-label before each data cell */
+  .td-data::before {
+      content: attr(data-label);
+      display: inline-block;
+      width: 50%;
+      padding: 10px;
+      font-weight: bold;
+      border-bottom: 1px solid #e0e0e0;
+  }
+}
+

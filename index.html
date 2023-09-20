@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx" dir="rtr">
+<html lang="zxx" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -26,9 +26,9 @@
               </div>
               <div class="invoice-logo">
                 <div class="invo-vat-to-wrap">
-                  <p class="invo-to  sm-sm-text mtb-0 mhg-line"> </p>
+                  <p class="invo-to  sm-sm-text mtb-0 mhg-line"></p>
                   <span class="mhg-line"></span>
-                  <p class="invo-vat  sm-sm-text">  </p>
+                  <p class="invo-vat  sm-sm-text"></p>
                   <p class="invo-owner-address sm-sm-text inter-400 mtb-0"> س.ت : 1010205534 <br /> عنوان الفرع : طريق الخرج القديم </p>
                 </div>
                 <a href="" class="logo">
@@ -48,9 +48,7 @@
             </div>
           </div>
           <!--Header End Here -->
-          
           <h1 class="center-tittle"> فاتورة ضريبية مبسطة </h1>
-          
           <div class="simple-vat-section">
             <div class="invoice-timing-wrap">
               <div class="invo-time-col">
@@ -165,112 +163,82 @@
               </div>
             </div>
           </div>
-          <!--Invoice Table Data Start here -->
-          <div class="table-wrapper">
-            <table class="responsive-table bstn-detail-table">
+          <br>
+          <div class="table-container">
+            <table class="custom-table">
               <thead>
-                <tr class=" ">
-						 <th class="invo-table-title  inter-700 sm-sm-text total-head"> Total الاجمالي </th>
-						 <th class="invo-table-title  inter-700 sm-sm-text total-head"> Vat Value ﻗﯾﻣﺔ اﻟﺿرﯾﺑﺔ </th>
-						 <th class="invo-table-title  inter-700 sm-sm-text total-head"> VAT % نسبة الضريبة </th>
-						 <th class="invo-table-title  inter-700 sm-sm-text total-head"> Total excl. VAT اﺟﻣﺎﻟﻲ ﻗﺑل اﻟﺿرﯾﺑﺔ </th>
-						 <th class="invo-table-title  inter-700 sm-sm-text total-head"> Discount الخصم </th>
-						 <th class="invo-table-title  inter-700 sm-sm-text total-head"> Price السعر </th>
-						 <th class="invo-table-title  inter-700 sm-sm-text total-head"> Unit اﻟوﺣده </th>
-						 <th class="invo-table-title  inter-700 sm-sm-text total-head"> Qty اﻟﻛﻣﯾﺔ </th>
-						 <th class="invo-table-title  inter-700 sm-sm-text total-head"> Waranty اﻟﺿﻣﺎن </th>
-						 <th class="invo-table-title  inter-700 sm-sm-text total-head"> Description اﻟﺑﯾﺎن / اﻟوﺻف </th>
-						 <th class="invo-table-title  inter-700 sm-sm-text total-head"> Code رقم الصنف </th>
-
+                <tr>
+                  <th class="th-header">Total الاجمالي</th>
+                  <th class="th-header">VAT & Values الضريبة والقيم</th>
+                  <th class="th-header">Pricing & Discounts السعر والخصم</th>
+                  <th class="th-header">Details تفاصيل</th>
+                  <th class="th-header">Code رقم الصنف</th>
                 </tr>
               </thead>
-              <tbody class="invo-tb-body">
-                <tr class="invo-tb-row">
-						 
-						 <td class="invo-tb-data total-data" data-title="Total الاجمالي">675.34</td>
-						 <td class="invo-tb-data rate-data" data-title="Vat Value ﻗﯾﻣﺔ اﻟﺿرﯾﺑﺔ">88.09</td>
-						 <td class="invo-tb-data rate-data" data-title="VAT % نسبة الضريبة">15.00</td>
-						 <td class="invo-tb-data rate-data" data-title="Total excl. VAT اﺟﻣﺎﻟﻲ ﻗﺑل اﻟﺿرﯾﺑﺔ">587.25</td>
-						 <td class="invo-tb-data rate-data" data-title="Discount الخصم">195.75</td>
-						 <td class="invo-tb-data rate-data" data-title="Price السعر">27.00</td>
-						 <td class="invo-tb-data rate-data" data-title="Unit اﻟوﺣده">Piece</td>
-						 <td class="invo-tb-data rate-data" data-title="Qty اﻟﻛﻣﯾﺔ">29.00</td>
-						 <td class="invo-tb-data rate-data" data-title="Waranty اﻟﺿﻣﺎن">24</td>
-						 <td class="invo-tb-data rate-data" data-title="Description اﻟﺑﯾﺎن / اﻟوﺻف">إطﺎر ﻟﻣﺑﺔ ﺳﻘﻔﯾﺔ أﺑﯾض+أﺳود 07</td>
-						 <td class="invo-tb-data" data-title="Code رقم الصنف">LI5101249</td>
+              <tbody class="tbody-section">
+                <tr class="tr-row">
+                  <td class="td-data" data-label="Total الاجمالي">675.34</td>
+                  <td class="td-data" data-label="VAT & Values الضريبة والقيم">VAT: 15.00% نسبة الضريبة <br>Value: 88.09 قيمة الضريبة <br>Excl. VAT: 587.25 قبل الضريبة </td>
+                  <td class="td-data" data-label="Pricing & Discounts السعر والخصم">Price: 27.00 السعر <br>Discount: 195.75 الخصم </td>
+                  <td class="td-data" data-label="Details تفاصيل">Unit: Piece الوحدة <br>Qty: 29.00 الكمية <br>Waranty: 24 Months الضمان <br>Description: إطﺎر ﻟﻣﺑﺔ ﺳﻘﻔﯾﺔ أﺑﯾض+أﺳود 07 الوصف </td>
+                  <td class="td-data" data-label="Code رقم الصنف">LI5101249</td>
                 </tr>
-               
               </tbody>
             </table>
           </div>
-          <!--Invoice Table Data End here -->
-          <!-- <div class="table-wrapper flex"><table class="responsive-table invoice-table totals bstn-detail-table"><thead></thead><tbody><tr><td class="invo-table-title inter-700 sm-sm-text" data-title="Description">Total Excluding VAT</td><td class="sm-sm-text" data-title="Value">1,862.25</td><td class="invo-table-title rate-title inter-700 sm-sm-text ar-text" data-title="Arabic Description">الاجمالي بدون ضريبة القيمة المضافة</td></tr><tr class="invo-tb-header"><th class="invo-table-title inter-700 sm-sm-text" data-title="Description">Total VAT 15%</th><th class="sm-sm-text" data-title="Value">279.34</th><th class="invo-table-title rate-title inter-700 sm-sm-text ar-text" data-title="Arabic Description">إﺟﻣﺎﻟﻲ ﺿرﯾﺑﺔ اﻟﻘﯾﻣﺔ اﻟﻣﺿﺎﻓﺔ %15 </th></tr><tr class="invo-tb-header"><th class="invo-table-title inter-700 sm-sm-text" data-title="Description">Paid Amount</th><th class="sm-sm-text" data-title="Value"> 2,141.59 </th><th class="invo-table-title rate-title inter-700 sm-sm-text ar-text"> المدفوع  </th></tr><tr class="invo-tb-header"><th class="invo-table-title inter-700 sm-sm-text" data-title="Description">Total Including VAT</th><th class="sm-sm-text" data-title="Value"> 2,141.59 </th><th class="invo-table-title rate-title inter-700 sm-sm-text ar-text" data-title="Arabic Description"> اﻹﺟﻣﺎﻟﻲ ﻣﻊ ﺿرﯾﺑﺔ اﻟﻘﯾﻣﺔ اﻟﻣﺿﺎﻓ  </th></tr></tbody><tfoot><tr class="invo-tb-footer"><td colspan="3" class="md-lg-font invo-table-title full-width-cell inter-700">
-										 الفين و مائة و واحد وأربعون ريال سعودي فقط
-									</td></tr></tfoot></table><div class="table-wrapper amount"><table class="responsive-table invoice-table bstn-detail-table"><tbody class="invo-tb-body"><tr class="invo-tb-header"><td class="invo-table-title inter-700 sm-sm-text" data-title="Description">Amount القيمة</td><td class="invo-table-title inter-700 sm-sm-text" data-title="Method">Tender طرﯾﻘﺔ اﻟدﻓﻊ</td></tr><tr><td data-title="Amount">2,141.59</td><td data-title="Tender">مدى</td></tr></tbody></table></div></div> -->
-          
-          <div class="table-wrapper flex">
-            <table class="custom-invoice-table">
+          <br>
+          <!--Invoice Table Data Start here -->
+        
+          <div class="table-wrapper">
+            <table class="summary-table">
               <tbody>
-                <tr class="custom-row">
-                  <td class="left-align"> Total Excluding VAT </td>
-                  <td class="center-align"> 1,862.25 </td>
-                  <td class="right-align"> الاجمالي بدون ضريبة القيمة المضافة </td>
+                <tr class="summary-row">
+                  <td class="td-eng">Total Excluding VAT</td>
+                  <td class="td-value">1,862.25</td>
+                  <td class="td-ar">الاجمالي بدون ضريبة القيمة المضافة</td>
                 </tr>
-                <tr class="custom-row">
-                  <th class="left-align">Total Discount</th>
-                  <th class="center-align">195.75</th>
-                  <th class="right-align">اجمالي الخصم</th>
+                <tr class="summary-row">
+                  <td class="td-eng">Total Discount</td>
+                  <td class="td-value">195.75</td>
+                  <td class="td-ar">اجمالي الخصم</td>
                 </tr>
-                <tr class="custom-row">
-                  <th class="left-align">Total VAT 15%</th>
-                  <th class="center-align">279.34</th>
-                  <th class="right-align">إﺟﻣﺎﻟﻲ ﺿرﯾﺑﺔ اﻟﻘﯾﻣﺔ اﻟﻣﺿﺎﻓﺔ %15 </th>
-                </tr>
-                <tr class="custom-row">
-                  <th class="left-align">Paid Amount</th>
-                  <th class="center-align"> 2,141.59 </th>
-                  <th class="right-align"> المدفوع </th>
-                </tr>
-                <tr class="custom-row">
-                  <th class="left-align">Total Including VAT</th>
-                  <th class="center-align"> 2,141.59 </th>
-                  <th class="right-align"> اﻹﺟﻣﺎﻟﻲ ﻣﻊ ﺿرﯾﺑﺔ اﻟﻘﯾﻣﺔ اﻟﻣﺿﺎﻓة </th>
-                </tr>
-                <tr class="separator invo-tb-footer"">
-												<td colspan=" 3" class="md-lg-font invo-table-title full-width-cell inter-700"> الفين و مائة و واحد وأربعون ريال سعودي فقط </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="table-wrapper flex ">
-            <table class="invoice-table bstn-detail-table">
-              <tbody class="invo-tb-body">
-                <tr class="invo-tb-header">
-                  <td class="invo-table-title  inter-700 sm-sm-text">Amount القيمة </td>
-                  <td class="invo-table-title  inter-700 sm-sm-text">Tender طرﯾﻘﺔ اﻟدﻓﻊ </td>
-                </tr>
-                <tr>
-                  <td>2,141.59</td>
-                  <td>مدى</td>
+					 
+					 <tr class="summary-row">
+						<th class="td-eng">Total VAT 15%</th>
+						<th class="td-value">279.34</th>
+						<th class="td-ar">إﺟﻣﺎﻟﻲ ﺿرﯾﺑﺔ اﻟﻘﯾﻣﺔ اﻟﻣﺿﺎﻓﺔ %15 </th>
+					 </tr>
+					 <tr class="summary-row">
+						<th class="td-eng">Paid Amount</th>
+						<th class="td-value"> 2,141.59 </th>
+						<th class="td-ar"> المدفوع </th>
+					 </tr>
+					 <tr class="summary-row">
+						<th class="td-eng">Total Including VAT</th>
+						<th class="td-value"> 2,141.59 </th>
+						<th class="td-ar"> اﻹﺟﻣﺎﻟﻲ ﻣﻊ ﺿرﯾﺑﺔ اﻟﻘﯾﻣﺔ اﻟﻣﺿﺎﻓة </th>
+					 </tr>
+                <!-- ... similar for other rows -->
+                <tr class="footer-row">
+                  <td colspan="3">الفين و مائة و واحد وأربعون ريال سعودي فقط</td>
                 </tr>
               </tbody>
             </table>
+				<table class="custom-table">
+					<tbody class="tbody-section">
+						 <tr class="tr-header">
+							  <td class="td-header">Amount القيمة</td>
+							  <td class="td-header">Tender طرﯾﻘﺔ اﻟدﻓﻊ</td>
+						 </tr>
+						 <tr class="tr-row">
+							  <td class="td-data" data-label="Amount القيمة">2,141.59</td>
+							  <td class="td-data" data-label="Tender طرﯾﻘﺔ اﻟدﻓﻊ">مدى</td>
+						 </tr>
+					</tbody>
+			  </table>
           </div>
-          
-          <!-- <div class="table-wrapper flex"><table width="600" cellspacing="0" cellpadding="0" border="0" align="center" style="max-width: 600px; width: 100%"><tbody><tr><td valign="top" style="padding: 10px; padding-top: 0"><table width="600" cellspacing="0" cellpadding="0" border="0" align="center" style="max-width: 600px; width: 100%"><tbody><tr><td valign="top" align="right" width="30%" style="padding: 10px; padding-top: 0"><p style="margin: 0; padding: 0; margin-bottom: 6px; font-family: Verdana; font-size: 12px"><b>الاجمالي بدون ضريبة القيمة المضافة</b></p></td><td valign="top" align="center" width="40%" style="padding: 10px; padding-top: 0"><p style="margin: 0; padding: 0; margin-bottom: 6px; font-family: Verdana; font-size: 12px">
-													1,862.25
-											  </p></td><td valign="top" align="left" width="30%" style="padding: 10px; padding-top: 0"><p style="margin: 0; padding: 0; margin-bottom: 6px; font-family: Verdana; font-size: 11px"><b>Total Excluding VAT</b></p></td></tr></tbody></table></td></tr><tr><td align="center" valign="top" style="padding: 10px"><hr size="1" style="margin-top: 0; border: 0px; border-bottom: 1px; border-style: solid; color: #dfdfdf"></td></tr><tr><td valign="top" style="padding: 10px; padding-top: 0"><table width="600" cellspacing="0" cellpadding="0" border="0" align="center" style="max-width: 600px; width: 100%"><tbody><tr><td valign="top" align="right" width="50%" style="padding: 10px; padding-top: 0"><p style="margin: 0; padding: 0; margin-bottom: 6px; font-family: Verdana; font-size: 12px"><b>القيمة</b></p></td><td valign="top" align="left" width="50%" style="padding: 10px; padding-top: 0"><p style="margin: 0; padding: 0; margin-bottom: 6px; font-family: Verdana; font-size: 11px"><b>Amount</b></p></td></tr></tbody></table></td></tr></tbody></table></div> -->
-           
-          <!-- <div class="table-wrapper flex"><table class="invoice-table totals bstn-detail-table"><thead><tr class="invo-tb-header"><th class="invo-table-title inter-700 sm-sm-text">Total Excluding VAT</th><th class="sm-sm-text">1,862.25</th><th class="invo-table-title rate-title inter-700 sm-sm-text ar-text">الاجمالي بدون ضريبة القيمة المضافة</th></tr><tr class="invo-tb-header"><th class="invo-table-title inter-700 sm-sm-text">Total Discount</th><th class="sm-sm-text">195.75</th><th class="invo-table-title rate-title inter-700 sm-sm-text ar-text">اجمالي الخصم</th></tr><tr class="invo-tb-header"><th class="invo-table-title inter-700 sm-sm-text">Total VAT 15%</th><th class="sm-sm-text">279.34</th><th class="invo-table-title rate-title inter-700 sm-sm-text ar-text">إﺟﻣﺎﻟﻲ ﺿرﯾﺑﺔ اﻟﻘﯾﻣﺔ اﻟﻣﺿﺎﻓﺔ %15 </th></tr><tr class="invo-tb-header"><th class="invo-table-title inter-700 sm-sm-text">Paid Amount</th><th class="sm-sm-text"> 2,141.59 </th><th class="invo-table-title rate-title inter-700 sm-sm-text ar-text"> المدفوع  </th></tr><tr class="invo-tb-header"><th class="invo-table-title inter-700 sm-sm-text">Total Including VAT</th><th class="sm-sm-text"> 2,141.59 </th><th class="invo-table-title rate-title inter-700 sm-sm-text ar-text"> اﻹﺟﻣﺎﻟﻲ ﻣﻊ ﺿرﯾﺑﺔ اﻟﻘﯾﻣﺔ اﻟﻣﺿﺎﻓ  </th></tr><tfoot><tr class="invo-tb-footer"><td colspan="3" class="md-lg-font invo-table-title full-width-cell inter-700">
-										الفين و مائة و واحد وأربعون  ريال سعودي فقط	
-										</td></tr></tfoot></thead></table><div class="table-wrapper amount"><table class="invoice-table bstn-detail-table"><tbody class="invo-tb-body"><tr class="invo-tb-header"><td class="invo-table-title  inter-700 sm-sm-text">Amount
-												القيمة
-											</td><td class="invo-table-title  inter-700 sm-sm-text">Tender
-												طرﯾﻘﺔ اﻟدﻓﻊ
-											</td></tr><tr><td>2,141.59</td><td>مدى</td></tr></tbody></table></div></div>
-				   -->
-          <!--Invoice Table Data End here -->
-          <!--Invoice content start here -->
+          <br>
+        
           <section class="bstn-Invoico-content" id="bstn_Invoico">
             <div class="container">
               <!--Build-stationcontact us detail end here -->
