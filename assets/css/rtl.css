@@ -1125,7 +1125,7 @@ td.md-lg-font.invo-table-title.full-width-cell.inter-700 {
 }
 .custom-invoice-module-f {
   color: #4d4d4dc0;
-   min-height: 40px;
+   min-height: 60px;
    border-bottom: solid #85CEE4;
  }
 
@@ -1261,4 +1261,63 @@ td.md-lg-font.invo-table-title.full-width-cell.inter-700 {
 .contact-image img {
   max-width: 100px; /* Adjust image width as needed */
   height: auto;
+}
+
+
+/* media mobile */
+
+@media only screen and (max-width: 480px) {
+  .right-side, .left-side , .creating-world , .grid .grid-1-2 , .invoice-container{
+    padding: 0;
+  }
+  .right-side{
+    padding-top: 40px;
+  }
+  .thanks{
+    font-size: 12px;
+    padding-top: 60px;
+  }
+  .creating-world { 
+    font-size: 10px;
+  }
+  .purchasing-list b { 
+    font-size: 11px;
+  }
+  .purchasing-list { 
+    font-size: 11px;
+  }
+  
+  .invoice-module {
+
+    padding: 0.5rem;
+  }
+
+.invoice-grid {
+    font-size: 12px;
+}
+.bst-header { 
+  margin: 0;
+}
+.custom-grid { 
+  padding: 0.1em 1em;
+}
+.custom-grid-x {
+  padding: 0.1em 1.5em;
+}
+.custom-invoice-module-f{ 
+  min-height: 60px;
+}
+.custom-under-value { 
+  font-size: 12px;
+}
+.bst-container {
+  display: flex;
+  justify-content: space-between;
+  height: 249px;
+  padding: 0px 15px;
+  margin: auto;
+  position: relative;
+  z-index: 5;
+  background-color: #85CEE4;
+}
 }
