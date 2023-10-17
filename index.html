@@ -8,15 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="../assets/images/logo/Fevicon.ico" rel="icon" />
-    <!-- <link rel="stylesheet" type="text/css" href="../assets/css/ltr.css" /> -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/rtl.css" />
+     <link rel="stylesheet" type="text/css" href="../assets/css/rtl.css" />
     <link rel="stylesheet" type="text/css" href="../assets/css/media-query.css" />
   </head>
   <body>
     <!--Invoice Wrap Start here -->
     <div class="invoice_wrap">
       <div class="invoice-container">
-        <div class="invoice-content-wrap" id="download_section">
+        <div class="invoice-content-wrap">
           <div class="bst-container">
             <div class="right-side">
               <div class="logo">
@@ -378,9 +377,8 @@
             </div>
           </div>
           <div class="download-section">
-            <p class="download-text"> لتحميل الفاتورة الضريبية يرجى الضغط على <a href="javascript:window.print()" class=" download-link print-btn">رابط التحميل</a>
+            <p class="download-text"> لتحميل الفاتورة الضريبية يرجى الضغط على <a class=" download-link download-btn" id="generatePDF" >رابط التحميل</a>
             </p>
-            <a class=" download-link download-btn" id="generatePDF"> PDF رابط التحميل</a>
           </div>
           <div class="contact-section">
             <div class="border-top"></div>
@@ -405,8 +403,8 @@
     <div class="invoice_wrap">
       <div class="invoice-container">
         <!--bottom content start here -->
-        <section class="agency-bottom-content d-print-none" id="agency_bottom">
-          <div class="invoice-content-wrap" id="download_section">
+        <section  id="download_section">
+          <div class="invoice-content-wrap">
             <!--Header Start Here -->
             <header class="invoice-header content-min-width bstn-header" id="invo_header">
               <div class="invoice-logo-content">
@@ -428,10 +426,8 @@
                 </div>
               </div>
             </header>
-            <br>
-            <h1 class="center-tittle"> فاتورة ضريبية مبسطة </h1>
-            <br>
-            <div class="simple-vat-section">
+             <h1 class="center-tittle"> فاتورة ضريبية مبسطة </h1>
+             <div class="simple-vat-section">
               <div class="invoice-timing-wrap">
                 <div class="invo-time-col">
                   <div class="Invoico-info column-one">
@@ -537,8 +533,7 @@
                 </div>
               </div>
             </div>
-            <br>
-            <!--Invoice Table Data Start here -->
+             <!--Invoice Table Data Start here -->
             <div class="table-wrapper">
               <table class="invoice-table bstn-detail-table">
                 <thead>
@@ -717,10 +712,11 @@
               </div>
             </section>
             <!--Invoice content end here -->
+				<div class="image-container">
+					<img src="/assets/Terms & Conditions.jpg" alt="Description of the image">
+				 </div>
           </div>
-          <div class="image-container">
-            <img src="/assets/Terms & Conditions.jpg" alt="Description of the image">
-          </div>
+        
         </section>
         <!--bottom content end here -->
       </div>
