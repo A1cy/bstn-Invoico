@@ -33,10 +33,11 @@
       var blob = pdf.output('blob');
       var link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
-      link.download = 'MHG-Sales-invoice.pdf';
+      link.target = '_blank'; // This will open the PDF in a new tab
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+      
 
     }).catch(function (error) {
       console.error("Error generating PDF:", error);
