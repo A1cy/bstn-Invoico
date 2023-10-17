@@ -6,12 +6,12 @@
 
     var downloadSection = $('#download_section');
 
-    // Temporarily adjust styles for PDF generation
-    downloadSection.css({
-      'visibility': 'visible',
-      'position': 'static',
-      'width': '1520px' // Simulating a large screen width
-    });
+    // Remove the class that hides the section
+    downloadSection.removeClass('hidden-for-users');
+
+    // Store the original width and set a fixed width for large screen
+    var originalWidth = downloadSection.width();
+    downloadSection.css('width', '1520px'); // Simulating a large screen width
 
     var cWidth = downloadSection.width();
     var cHeight = downloadSection.height();
@@ -28,7 +28,7 @@
       pdf.addImage(imgData, 'JPG', topLeftMargin, topLeftMargin, canvasImageWidth, canvasImageHeight);
       for (var i = 1; i <= totalPDFPages; i++) {
         pdf.addPage(pdfWidth, pdfHeight);
-        pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + topLeftMargin, canvasImageWidth, canvasImageHeight);
+        pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + topLeftMargin * 0, canvasImageWidth, canvasImageHeight);
       }
 
       var blob = pdf.output('blob');
@@ -43,14 +43,9 @@
     }).catch(function (error) {
       console.error("Error generating PDF:", error);
     }).finally(function () {
-      // Revert the styles back to their original state
-      downloadSection.css({
-        'visibility': 'hidden',
-        'position': 'absolute',
-        'top': '0',
-        'left': '100%',
-        'width': 'auto'
-      });
+      // Revert the width back to its original state and hide the section using the class
+      downloadSection.css('width', originalWidth + 'px');
+      downloadSection.addClass('hidden-for-users');
     });
   });
 })(jQuery);

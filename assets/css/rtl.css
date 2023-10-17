@@ -124,12 +124,12 @@ section {
   border-top: 2px solid #ccc;
 }
 
-#download_section {
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 100%; /* Push it off-screen */
+.hidden-for-users {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
 }
+
 
 
 .mtb-0 {
