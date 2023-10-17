@@ -16,8 +16,7 @@
       'display': 'block',
       'width': '1520px', // Simulating a large screen width
       'position': 'absolute',
-      'top': '-1000px'  // Position it out of view
-    });
+     });
 
     var cWidth = downloadSection.width();
     var cHeight = downloadSection.height();
