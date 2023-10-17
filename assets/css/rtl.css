@@ -153,7 +153,7 @@ section {
 }
 
 .sm-sm-text {
-  font-size: 10px;
+  font-size: 9px;
 
 }
 .b-text {
@@ -585,7 +585,7 @@ tr, th, td {
   right: -13px;
 }  */
 .invoice-timing-wrap {
-  padding: 0px 20px;
+  padding: 0px 18px;
   direction: ltr;
   
 }
