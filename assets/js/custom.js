@@ -14,7 +14,6 @@
     var originalWidth = downloadSection.width();
     downloadSection.css('width', '1920px');
 
-    // Introduce a short delay to allow the browser to apply the CSS changes
     setTimeout(function() {
       var cWidth = downloadSection.width();
       var cHeight = downloadSection.height();
