@@ -15,8 +15,8 @@
     downloadSection.css({
       'display': 'block',
       'width': '1520px', // Simulating a large screen width
-      'position': 'absolute',
-      'top': '-5000px'  // Position it out of view
+      
+      'top': '-1000px'  // Position it out of view
     });
 
     var cWidth = downloadSection.width();
