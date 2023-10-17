@@ -334,7 +334,7 @@ span.mhg-line {
 }
 .invo-vat-to-wrap {
   text-align: right;
-  /* display: inline-grid; */
+   display: inline-grid;  
 }
 .invo-owner-address {
   color: #888888;
@@ -475,7 +475,6 @@ tr, th, td {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row-reverse;
 }
 .invo-buttons-wrap .invo-btns .print-btn {
   background: #73cde1;
@@ -586,6 +585,8 @@ tr, th, td {
 }  */
 .invoice-timing-wrap {
   padding: 0px 20px;
+  direction: ltr;
+  
 }
 .bstn-detail-col {
   display: inline-flex;
