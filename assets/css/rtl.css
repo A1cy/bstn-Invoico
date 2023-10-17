@@ -1266,7 +1266,23 @@ td.md-lg-font.invo-table-title.full-width-cell.inter-700 {
 
 /* media mobile */
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 780px) {
+
+  .contact-section {
+      display: flex;
+     flex-direction: column;
+ }
+
+  .download-text, .contact-text , .contact-number, .contact-w { 
+    font-size: 10px;
+  }
+  .caption {
+    font-size: 9px;
+  }
+  .custom-column {
+    flex-basis: calc(17.75% - 10px)  ;
+      font-size: 9px;
+  }
 
   svg#Layer_2 {
     width: 122px;
@@ -1300,7 +1316,7 @@ td.md-lg-font.invo-table-title.full-width-cell.inter-700 {
     font-size: 9px;
 }
 .bst-header { 
-  margin: 0;
+  margin: 0.5em;
 }
 .custom-grid { 
   padding: 0.1em 1em;
@@ -1312,7 +1328,7 @@ td.md-lg-font.invo-table-title.full-width-cell.inter-700 {
   min-height: 100%;
 }
 .custom-under-value { 
-  font-size: 12px;
+  font-size: 10px;
 }
 .bst-container {
   display: flex;
