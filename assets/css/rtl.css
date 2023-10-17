@@ -125,14 +125,7 @@ section {
 }
 
 #download_section {
-  position: absolute;
-  width: 1520px; /* Simulating a large screen width */
-  overflow: hidden;
-  top: 0;
-  left: -2000px; /* Push it off-screen */
-  height: auto;
-  opacity: 0; /* Make it invisible */
-  pointer-events: none; /* Ensure it doesn't interfere with user interactions */
+  display: none;
 }
 
 

@@ -4,7 +4,20 @@
   $('#generatePDF').on('click', function (event) {
     event.preventDefault();
 
-    var downloadSection = $('#download_section');
+    // Clone the original section
+    var downloadSection = $('#download_section').clone();
+
+    // Append the clone to the body and hide the original
+    $('body').append(downloadSection);
+    $('#download_section').css('display', 'none');
+
+    // Adjust styles for the clone
+    downloadSection.css({
+      'display': 'block',
+      'width': '1520px', // Simulating a large screen width
+      'position': 'absolute',
+      'top': '-5000px'  // Position it out of view
+    });
 
     var cWidth = downloadSection.width();
     var cHeight = downloadSection.height();
@@ -15,13 +28,13 @@
     var canvasImageHeight = cHeight;
     var totalPDFPages = Math.ceil(cHeight / pdfHeight) - 1;
 
-    html2canvas(downloadSection[0], { allowTaint: true, useCORS: true }).then(function (canvas) {
-      var imgData = canvas.toDataURL('image/jpeg', 0.5); // Reduced quality to 0.5
+    html2canvas(downloadSection[0], { allowTaint: true }).then(function (canvas) {
+      var imgData = canvas.toDataURL('image/jpeg', 0.5);
       var pdf = new jsPDF('p', 'pt', [pdfWidth, pdfHeight]);
       pdf.addImage(imgData, 'JPG', topLeftMargin, topLeftMargin, canvasImageWidth, canvasImageHeight);
       for (var i = 1; i <= totalPDFPages; i++) {
         pdf.addPage(pdfWidth, pdfHeight);
-        pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + topLeftMargin * 0, canvasImageWidth, canvasImageHeight);
+        pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + topLeftMargin, canvasImageWidth, canvasImageHeight);
       }
 
       var blob = pdf.output('blob');
@@ -32,6 +45,13 @@
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+
+    }).catch(function (error) {
+      console.error("Error generating PDF:", error);
+    }).finally(function () {
+      // Remove the clone and show the original section
+      downloadSection.remove();
+      $('#download_section').css('display', 'block');
     });
   });
 })(jQuery);
