@@ -10,6 +10,10 @@
     // Temporarily display the section for PDF generation
     downloadSection.css('display', 'block');
 
+    // Store the original width and set a fixed width for large screen
+    var originalWidth = downloadSection.width();
+    downloadSection.css('width', '1920px');
+
     var cWidth = downloadSection.width();
     var cHeight = downloadSection.height();
     var topLeftMargin = 0;
@@ -46,7 +50,8 @@
       }
       pdf.save('MHG-Sales-invoice.pdf');
 
-      // Hide the section again after PDF generation
+      // Revert the width back to its original state and hide the section
+      downloadSection.css('width', originalWidth + 'px');
       downloadSection.css('display', 'none');
     });
   });
