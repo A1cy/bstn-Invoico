@@ -15,7 +15,7 @@
     downloadSection.css({
       'display': 'block',
       'width': '1520px', // Simulating a large screen width
-      'position': 'relative', // For capturing content
+      'position': 'absolute', // For capturing content
       'overflow': 'visible' // Ensure all content is visible
     });
 
@@ -31,7 +31,7 @@
     html2canvas(downloadSection[0], { allowTaint: true }).then(function (canvas) {
       // Adjust styles for the clone for download
       downloadSection.css({
-        'position': 'absolute', // For download
+        'position': 'relative', // For download
         'top': '-5000px'  // Position it out of view
       });
 
