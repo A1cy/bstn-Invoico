@@ -1,10 +1,6 @@
 (function ($) {
   'use strict';
 
-  function isMobileDevice() {
-    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-  }
-
   $('#generatePDF').on('click', function (event) {
     event.preventDefault();
 
@@ -34,6 +30,10 @@
         pdf.addPage(pdfWidth, pdfHeight);
         pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + topLeftMargin * 0, canvasImageWidth, canvasImageHeight);
       }
+
+      function isMobileDevice() {
+        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+      };
 
       if (isMobileDevice()) {
         // Mobile-specific download strategy
