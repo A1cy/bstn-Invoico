@@ -4,20 +4,18 @@
   $('#generatePDF').on('click', function (event) {
     event.preventDefault();
 
-    var downloadSection = $('#download_section');
+    // Clone the original section
+    var downloadSection = $('#download_section').clone();
 
-    // Store the original styles
-    var originalPosition = downloadSection.css('position');
-    var originalWidth = downloadSection.css('width');
-    var originalDisplay = downloadSection.css('display');
+    // Append the clone to the body and hide the original
+    $('body').append(downloadSection);
+    $('#download_section').hide();
 
-    // Adjust styles for the section to simulate a large screen view
+    // Adjust styles for the clone to simulate a large screen view
     downloadSection.css({
       'display': 'block',
       'width': '1520px', // Simulating a large screen width
-      'position': 'absolute',
-      'top': '-5000px',  // Position it out of view
-      'left': '0',
+      'position': 'relative', // For capturing content correctly
       'overflow': 'visible' // Ensure all content is visible
     });
 
@@ -39,6 +37,12 @@
         pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + topLeftMargin, canvasImageWidth, canvasImageHeight);
       }
 
+      // Change position to absolute and move out of viewport before download
+      downloadSection.css({
+        'position': 'absolute',
+        'top': '-5000px'
+      });
+
       var blob = pdf.output('blob');
       var link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
@@ -51,12 +55,9 @@
     }).catch(function (error) {
       console.error("Error generating PDF:", error);
     }).finally(function () {
-      // Revert the styles back to their original state
-      downloadSection.css({
-        'position': originalPosition,
-        'width': originalWidth,
-        'display': originalDisplay
-      });
+      // Remove the clone and show the original section
+      downloadSection.remove();
+      $('#download_section').show();
     });
   });
 })(jQuery);
