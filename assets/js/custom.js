@@ -9,7 +9,7 @@
 
     // Store the original width and set a fixed width for large screen
     var originalWidth = downloadSection.width();
-    downloadSection.css('width', '1920px');
+    downloadSection.css('width', '1400px');
 
     var cWidth = downloadSection.width();
     var cHeight = downloadSection.height();
