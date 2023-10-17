@@ -9,14 +9,18 @@
 
     // Append the clone to the body and hide the original
     $('body').append(downloadSection);
-    $('#download_section').hide();  // Using jQuery's hide method
+    $('#download_section').hide();
 
-    // Adjust styles for the clone
+    // Adjust styles for the clone to simulate a large screen view
     downloadSection.css({
       'display': 'block',
       'width': '1520px', // Simulating a large screen width
-      'position': 'absolute',
-     });
+      'position': 'relative',
+       'overflow': 'visible' // Ensure all content is visible
+    });
+
+    // Override any media queries or styles that might affect the layout
+    // Add any necessary styles here to ensure the content looks as it would on a large screen
 
     var cWidth = downloadSection.width();
     var cHeight = downloadSection.height();
@@ -50,7 +54,7 @@
     }).finally(function () {
       // Remove the clone and show the original section
       downloadSection.remove();
-      $('#download_section').show();  // Using jQuery's show method
+      $('#download_section').show();
     });
   });
 })(jQuery);
