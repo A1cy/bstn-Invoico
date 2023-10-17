@@ -15,7 +15,7 @@
     downloadSection.css({
       'display': 'block',
       'width': '1520px', // Simulating a large screen width
-      'position': 'absolute', // For capturing content
+      'position': 'relative', // Render as it would on a large screen
       'overflow': 'visible' // Ensure all content is visible
     });
 
@@ -29,10 +29,10 @@
     var totalPDFPages = Math.ceil(cHeight / pdfHeight) - 1;
 
     html2canvas(downloadSection[0], { allowTaint: true }).then(function (canvas) {
-      // Adjust styles for the clone for download
+      // Move the content out of view for download
       downloadSection.css({
-        'position': 'relative', // For download
-        'top': '-5000px'  // Position it out of view
+        'position': 'absolute',
+        'top': '-5000px'
       });
 
       var imgData = canvas.toDataURL('image/jpeg', 0.5);
