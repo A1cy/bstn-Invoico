@@ -124,10 +124,8 @@ section {
   border-top: 2px solid #ccc;
 }
 
-.hidden-for-users {
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
+#download_section {
+  visibility: hidden;
 }
 
 
