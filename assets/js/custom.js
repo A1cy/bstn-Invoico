@@ -6,20 +6,23 @@
 
     var downloadSection = $('#download_section');
 
-    // Store the original styles
-    var originalWidth = downloadSection.css('width');
-    var originalVisibility = downloadSection.css('visibility');
+    var cWidth = downloadSection.width();
+    var cHeight = downloadSection.height();
+    var topLeftMargin = 0;
+    var pdfWidth = cWidth + topLeftMargin * 2;
+    var pdfHeight = pdfWidth * 1.5 + topLeftMargin * 2;
+    var canvasImageWidth = cWidth;
+    var canvasImageHeight = cHeight;
+    var totalPDFPages = Math.ceil(cHeight / pdfHeight) - 1;
 
-    // Apply styles for large screen view
-    downloadSection.css({
-      'width': '1520px',
-      'visibility': 'visible'
-    });
-
-    html2canvas(downloadSection[0], { allowTaint: true }).then(function (canvas) {
-      var imgData = canvas.toDataURL('image/jpeg', 0.5);
-      var pdf = new jsPDF('p', 'pt', [1520, 2280]); // Assuming an aspect ratio similar to A4
-      pdf.addImage(imgData, 'JPG', 0, 0, 1520, canvas.height * (1520 / canvas.width));
+    html2canvas(downloadSection[0], { allowTaint: true, useCORS: true }).then(function (canvas) {
+      var imgData = canvas.toDataURL('image/jpeg', 0.5); // Reduced quality to 0.5
+      var pdf = new jsPDF('p', 'pt', [pdfWidth, pdfHeight]);
+      pdf.addImage(imgData, 'JPG', topLeftMargin, topLeftMargin, canvasImageWidth, canvasImageHeight);
+      for (var i = 1; i <= totalPDFPages; i++) {
+        pdf.addPage(pdfWidth, pdfHeight);
+        pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + topLeftMargin * 0, canvasImageWidth, canvasImageHeight);
+      }
 
       var blob = pdf.output('blob');
       var link = document.createElement('a');
@@ -29,15 +32,6 @@
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-
-    }).catch(function (error) {
-      console.error("Error generating PDF:", error);
-    }).finally(function () {
-      // Revert the styles back to their original state
-      downloadSection.css({
-        'width': originalWidth,
-        'visibility': originalVisibility
-      });
     });
   });
 })(jQuery);
