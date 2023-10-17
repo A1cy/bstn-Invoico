@@ -34,8 +34,7 @@
     // Now, just before capturing with html2canvas, change its position to absolute and move it out of view
     downloadSection.css({
       'position': 'absolute',
-      'top': '-5000px'
-    });
+     });
 
     html2canvas(downloadSection[0], { allowTaint: true }).then(function (canvas) {
       var imgData = canvas.toDataURL('image/jpeg', 0.5);
