@@ -123,6 +123,11 @@ section {
   height: 100%;
   border-top: 2px solid #ccc;
 }
+
+#download_section {
+  display: none;
+}
+
 .mtb-0 {
   margin-bottom: 0;
   margin-top: 0;

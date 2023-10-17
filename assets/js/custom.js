@@ -6,6 +6,10 @@
   ----------------------------------------------------------------*/
   $('#generatePDF').on('click', function () {
     var downloadSection = $('#download_section');
+
+    // Temporarily display the section for PDF generation
+    downloadSection.css('display', 'block');
+
     var cWidth = downloadSection.width();
     var cHeight = downloadSection.height();
     var topLeftMargin = 0;
@@ -41,6 +45,9 @@
         );
       }
       pdf.save('MHG-Sales-invoice.pdf');
+
+      // Hide the section again after PDF generation
+      downloadSection.css('display', 'none');
     });
   });
 })(jQuery); // End of use strict
