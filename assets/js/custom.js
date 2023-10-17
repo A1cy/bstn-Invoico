@@ -15,12 +15,9 @@
     downloadSection.css({
       'display': 'block',
       'width': '1520px', // Simulating a large screen width
-      'position': 'relative', // Start with position relative
+      'position': 'relative', // For capturing content
       'overflow': 'visible' // Ensure all content is visible
     });
-
-    // Override any media queries or styles that might affect the layout
-    // Add any necessary styles here to ensure the content looks as it would on a large screen
 
     var cWidth = downloadSection.width();
     var cHeight = downloadSection.height();
@@ -31,12 +28,13 @@
     var canvasImageHeight = cHeight;
     var totalPDFPages = Math.ceil(cHeight / pdfHeight) - 1;
 
-    // Now, just before capturing with html2canvas, change its position to absolute and move it out of view
-    downloadSection.css({
-      'position': 'absolute',
-     });
-
     html2canvas(downloadSection[0], { allowTaint: true }).then(function (canvas) {
+      // Adjust styles for the clone for download
+      downloadSection.css({
+        'position': 'absolute', // For download
+        'top': '-5000px'  // Position it out of view
+      });
+
       var imgData = canvas.toDataURL('image/jpeg', 0.5);
       var pdf = new jsPDF('p', 'pt', [pdfWidth, pdfHeight]);
       pdf.addImage(imgData, 'JPG', topLeftMargin, topLeftMargin, canvasImageWidth, canvasImageHeight);
