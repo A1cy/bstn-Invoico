@@ -127,12 +127,9 @@ section {
   display: none;
 }
 
-/* Example media query override for the cloned section */
-#download_section.cloned {
-  /* Override styles here */
-  /* Example: */
-  font-size: 16px !important;
-  /* Add any other styles that need to be overridden for a desktop view */
+div#download_section {
+  width: 53em;
+  margin-top: 2em;
 }
 
 /* Add more overrides based on your actual media queries and styles */
