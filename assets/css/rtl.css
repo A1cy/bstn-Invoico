@@ -125,8 +125,12 @@ section {
 }
 
 #download_section {
-  display: none;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 100%; /* Push it off-screen */
 }
+
 
 .mtb-0 {
   margin-bottom: 0;

@@ -6,12 +6,12 @@
 
     var downloadSection = $('#download_section');
 
-    // Temporarily display the section for PDF generation
-    downloadSection.css('display', 'block');
-
-    // Store the original width and set a fixed width for large screen
-    var originalWidth = downloadSection.width();
-    downloadSection.css('width', '1520px'); // Simulating a large screen width
+    // Temporarily adjust styles for PDF generation
+    downloadSection.css({
+      'visibility': 'visible',
+      'position': 'static',
+      'width': '1520px' // Simulating a large screen width
+    });
 
     var cWidth = downloadSection.width();
     var cHeight = downloadSection.height();
@@ -22,28 +22,35 @@
     var canvasImageHeight = cHeight;
     var totalPDFPages = Math.ceil(cHeight / pdfHeight) - 1;
 
-    // Limit the number of pages for demonstration
-    totalPDFPages = Math.min(totalPDFPages, 3);
-
     html2canvas(downloadSection[0], { allowTaint: true }).then(function (canvas) {
-      var imgData = canvas.toDataURL('image/jpeg', 0.5); // Reduced quality to 0.5
+      var imgData = canvas.toDataURL('image/jpeg', 0.5);
       var pdf = new jsPDF('p', 'pt', [pdfWidth, pdfHeight]);
       pdf.addImage(imgData, 'JPG', topLeftMargin, topLeftMargin, canvasImageWidth, canvasImageHeight);
       for (var i = 1; i <= totalPDFPages; i++) {
         pdf.addPage(pdfWidth, pdfHeight);
-        pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + topLeftMargin * 0, canvasImageWidth, canvasImageHeight);
+        pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + topLeftMargin, canvasImageWidth, canvasImageHeight);
       }
 
-      // Use FileSaver.js to save the file
       var blob = pdf.output('blob');
-      saveAs(blob, 'MHG-Sales-invoice.pdf');
+      var link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'MHG-Sales-invoice.pdf';
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
 
     }).catch(function (error) {
       console.error("Error generating PDF:", error);
     }).finally(function () {
-      // Revert the width back to its original state and hide the section
-      downloadSection.css('width', originalWidth + 'px');
-      downloadSection.css('display', 'none');
+      // Revert the styles back to their original state
+      downloadSection.css({
+        'visibility': 'hidden',
+        'position': 'absolute',
+        'top': '0',
+        'left': '100%',
+        'width': 'auto'
+      });
     });
   });
 })(jQuery);
