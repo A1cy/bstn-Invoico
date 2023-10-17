@@ -15,7 +15,7 @@
     downloadSection.css({
       'display': 'block',
       'width': '1520px', // Simulating a large screen width
-      'position': 'relative', // For capturing content
+      'position': 'absolute', // For capturing content
       'overflow': 'visible', // Ensure all content is visible
       // Add any other styles here to override mobile-specific styles
     });
