@@ -4,14 +4,14 @@
   $('#generatePDF').on('click', function (event) {
     event.preventDefault();
 
-    // Clone the original section
-    var downloadSection = $('#download_section').clone();
+    var downloadSection = $('#download_section');
 
-    // Append the clone to the body and hide the original
-    $('body').append(downloadSection);
-    $('#download_section').hide();
+    // Store the original styles
+    var originalPosition = downloadSection.css('position');
+    var originalWidth = downloadSection.css('width');
+    var originalDisplay = downloadSection.css('display');
 
-    // Adjust styles for the clone to simulate a large screen view
+    // Adjust styles for the section to simulate a large screen view
     downloadSection.css({
       'display': 'block',
       'width': '1520px', // Simulating a large screen width
@@ -30,7 +30,7 @@
     var canvasImageHeight = cHeight;
     var totalPDFPages = Math.ceil(cHeight / pdfHeight) - 1;
 
-    html2canvas(downloadSection[0], { allowTaint: true, useCORS: true }).then(function (canvas) {
+    html2canvas(downloadSection[0], { allowTaint: true }).then(function (canvas) {
       var imgData = canvas.toDataURL('image/jpeg', 0.5);
       var pdf = new jsPDF('p', 'pt', [pdfWidth, pdfHeight]);
       pdf.addImage(imgData, 'JPG', topLeftMargin, topLeftMargin, canvasImageWidth, canvasImageHeight);
@@ -51,9 +51,12 @@
     }).catch(function (error) {
       console.error("Error generating PDF:", error);
     }).finally(function () {
-      // Remove the clone and show the original section
-      downloadSection.remove();
-      $('#download_section').show();
+      // Revert the styles back to their original state
+      downloadSection.css({
+        'position': originalPosition,
+        'width': originalWidth,
+        'display': originalDisplay
+      });
     });
   });
 })(jQuery);
