@@ -9,7 +9,7 @@
 
     // Store the original width and set a fixed width for large screen
     var originalWidth = downloadSection.width();
-    downloadSection.css('width', '1400px');
+    downloadSection.css('width', '1920px'); // Simulating a large screen width
 
     var cWidth = downloadSection.width();
     var cHeight = downloadSection.height();
@@ -28,21 +28,8 @@
         pdf.addPage(pdfWidth, pdfHeight);
         pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + topLeftMargin * 0, canvasImageWidth, canvasImageHeight);
       }
+      pdf.save('MHG-Sales-invoice.pdf');
 
-      // Create a blob from the PDF and use an object URL to download
-      var dataURL = pdf.output('datauristring');
-      var link = document.createElement('a');
-      link.href = dataURL;
-      link.download = 'MHG-Sales-invoice.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      
-      
-
-    }).catch(function (error) {
-      console.error("Error generating PDF:", error);
-    }).finally(function () {
       // Revert the width back to its original state and hide the section
       downloadSection.css('width', originalWidth + 'px');
       downloadSection.css('display', 'none');
