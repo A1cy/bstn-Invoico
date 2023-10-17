@@ -1,7 +1,10 @@
 (function ($) {
   'use strict';
 
-  $('#generatePDF').on('click', function () {
+  $('#generatePDF').on('click', function (event) {
+    // Prevent default behavior of the <a> tag
+    event.preventDefault();
+
     var downloadSection = $('#download_section');
 
     // Temporarily display the section for PDF generation
@@ -31,18 +34,12 @@
 
       // Use blob for mobile download
       var blob = pdf.output('blob');
-      var blobURL = URL.createObjectURL(blob);
       var link = document.createElement('a');
-      link.href = blobURL;
+      link.href = URL.createObjectURL(blob);
       link.download = 'MHG-Sales-invoice.pdf';
       document.body.appendChild(link);
-
-      // Add a slight delay before triggering the click
-      setTimeout(function() {
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(blobURL);  // Free up resources
-      }, 100);
+      link.click();
+      document.body.removeChild(link);
 
     }).catch(function (error) {
       console.error("Error generating PDF:", error);
