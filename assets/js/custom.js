@@ -31,24 +31,9 @@
         pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + topLeftMargin * 0, canvasImageWidth, canvasImageHeight);
       }
 
-      function isMobileDevice() {
-        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-      };
-
-      if (isMobileDevice()) {
-        // Mobile-specific download strategy
-        var pdfData = pdf.output('datauristring');
-        window.open(pdfData);
-      } else {
-        // Desktop download strategy
-        var blob = pdf.output('blob');
-        var link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = 'MHG-Sales-invoice.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }
+      // Use FileSaver.js to save the file
+      var blob = pdf.output('blob');
+      saveAs(blob, 'MHG-Sales-invoice.pdf');
 
     }).catch(function (error) {
       console.error("Error generating PDF:", error);
