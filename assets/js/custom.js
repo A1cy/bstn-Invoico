@@ -30,13 +30,14 @@
       }
 
       // Create a blob from the PDF and use an object URL to download
-      var blob = pdf.output('blob');
+      var dataURL = pdf.output('datauristring');
       var link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.target = '_blank'; // This will open the PDF in a new tab
+      link.href = dataURL;
+      link.download = 'MHG-Sales-invoice.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+      
       
 
     }).catch(function (error) {
