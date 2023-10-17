@@ -1,8 +1,11 @@
 (function ($) {
   'use strict';
 
+  function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+  }
+
   $('#generatePDF').on('click', function (event) {
-    // Prevent default behavior of the <a> tag
     event.preventDefault();
 
     var downloadSection = $('#download_section');
@@ -32,14 +35,20 @@
         pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + topLeftMargin * 0, canvasImageWidth, canvasImageHeight);
       }
 
-      // Use blob for mobile download
-      var blob = pdf.output('blob');
-      var link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = 'MHG-Sales-invoice.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      if (isMobileDevice()) {
+        // Mobile-specific download strategy
+        var pdfData = pdf.output('datauristring');
+        window.open(pdfData);
+      } else {
+        // Desktop download strategy
+        var blob = pdf.output('blob');
+        var link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'MHG-Sales-invoice.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
 
     }).catch(function (error) {
       console.error("Error generating PDF:", error);
