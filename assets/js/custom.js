@@ -15,9 +15,13 @@
     downloadSection.css({
       'display': 'block',
       'width': '1520px', // Simulating a large screen width
-      'position': 'absolute', // For capturing content
-      'overflow': 'visible' // Ensure all content is visible
+      'position': 'relative', // For capturing content
+      'overflow': 'visible', // Ensure all content is visible
+      // Add any other styles here to override mobile-specific styles
     });
+
+    // Force a reflow
+    downloadSection[0].offsetHeight;
 
     var cWidth = downloadSection.width();
     var cHeight = downloadSection.height();
@@ -31,7 +35,7 @@
     html2canvas(downloadSection[0], { allowTaint: true }).then(function (canvas) {
       // Adjust styles for the clone for download
       downloadSection.css({
-        'position': 'relative', // For download
+        'position': 'absolute', // For download
         'top': '-5000px'  // Position it out of view
       });
 
