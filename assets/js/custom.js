@@ -9,28 +9,32 @@ function isSafari() {
   return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 }
 
-
 (function ($) {
   'use strict';
 
- 
-    $('#generatePDF').on('click', function (event) {
-      event.preventDefault();
-  
-      // Set a fixed rendering width to represent a large screen view
-      var renderingWidth = 1024;  // Example value, adjust as needed
-  
-      var downloadSection = $('#download_section').clone();
-      $('body').append(downloadSection);
-      $('#download_section').hide();
-  
-      downloadSection.css({
-        'display': 'block',
-        'width': renderingWidth + 'px',  // Set a fixed width
-        'position': 'relative',
-        'overflow': 'visible'
-      });
-  
+  $('#generatePDF').on('click', function (event) {
+    event.preventDefault();
+
+    event.preventDefault();
+
+    // Set a fixed rendering width to represent a large screen view
+    var fixedWidth = 1024;  // This represents a typical desktop width
+    var deviceWidth = $(window).width();
+    var scaleRatio = deviceWidth / fixedWidth;
+
+    var downloadSection = $('#download_section').clone();
+    $('body').append(downloadSection);
+    $('#download_section').hide();
+
+    downloadSection.css({
+      'display': 'block',
+      'width': fixedWidth + 'px',  // Set to fixed width
+      'transform': 'scale(' + scaleRatio + ')',  // Scale the content to fit the device width
+      'transform-origin': 'top left',
+      'position': 'relative',
+      'overflow': 'visible'
+    });
+
     var cWidth = downloadSection.width();
     var cHeight = downloadSection.height();
     var topLeftMargin = 0;
