@@ -353,15 +353,15 @@ span.mhg-line {
 .invo-owner-address {
   color: #888888;
 }
-.invoice-table.totals thead th{
+/* .invoice-table.totals thead th{
 
   width: 33%;
 
-}
+} */
 
 .flex { 
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 table.invoice-table.totals.bstn-detail-table { 
@@ -392,10 +392,9 @@ tr, th, td {
   text-align: center;
 }
 .invoice-table td {
-  color: #888888;
+  color: #000000;
   font-size: 14px;
-  line-height: 22px;
-  padding: 20px 0;
+   padding: 5px 2px;
 }
 .invoice-table thead th {
   color: #12151c;
@@ -408,8 +407,8 @@ tr, th, td {
   border-bottom: none;
 }
 .invo-tb-body {
-  border-bottom: 2px solid #12151c;
-  border-top: 2px solid #12151c;
+  border-bottom: 1px solid #12151c;
+  border-top: 1px solid #12151c;
 }
 .serv-wid {
   width: 32%;
