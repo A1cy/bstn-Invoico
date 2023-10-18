@@ -127,10 +127,6 @@ section {
 display: none;
 }
 
-div#download_section {
-  width: 46em;
-  margin-top: 2em;
-}
 
 /* Add more overrides based on your actual media queries and styles */
 
