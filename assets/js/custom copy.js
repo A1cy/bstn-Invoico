@@ -1,13 +1,8 @@
-
 (function ($) {
   'use strict';
 
   $('#generatePDF').on('click', function (event) {
     event.preventDefault();
-
-    // Determine device width and set the rendering width accordingly
-    var deviceWidth = $(window).width();
-    var renderingWidth = deviceWidth < 768 ? deviceWidth : 1520;  // 768px is a common breakpoint for mobile devices
 
     // Clone the original section
     var downloadSection = $('#download_section').clone();
@@ -16,12 +11,12 @@
     $('body').append(downloadSection);
     $('#download_section').hide();
 
-    // Adjust styles for the clone
+    // Adjust styles for the clone to simulate a large screen view
     downloadSection.css({
       'display': 'block',
-      'width': renderingWidth + 'px',
-      'position': 'relative',
-      'overflow': 'visible'
+      'width': '1520px', // Simulating a large screen width
+      'position': 'relative', // For capturing content correctly
+      'overflow': 'visible' // Ensure all content is visible
     });
 
     var cWidth = downloadSection.width();
@@ -42,17 +37,23 @@
         pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + topLeftMargin, canvasImageWidth, canvasImageHeight);
       }
 
-      // Use the data URI scheme for initiating the download on mobile
-      var dataURI = pdf.output('datauristring');
+      // Change position to absolute and move out of viewport before download
+      downloadSection.css({
+        'position': 'absolute',
+        'top': '-5000px'
+      });
+
+      var blob = pdf.output('blob');
       var link = document.createElement('a');
-      link.href = dataURI;
+      link.href = URL.createObjectURL(blob);
       link.download = 'MHG-Sales-invoice.pdf';
+      link.style.display = 'none';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
 
     }).catch(function (error) {
-      alert("Error generating PDF: " + error.message);
+      console.error("Error generating PDF:", error);
     }).finally(function () {
       // Remove the clone and show the original section
       downloadSection.remove();
