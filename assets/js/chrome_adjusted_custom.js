@@ -67,7 +67,9 @@ function isSafari() {
       link.download = 'MHG-Sales-invoice.pdf';
       document.body.appendChild(link);
       link.click();
- 
+      setTimeout(function() {
+        link.click();  // Triggering the download again after a short delay
+      }, 50);
       document.body.removeChild(link);
     
 
