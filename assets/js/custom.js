@@ -23,7 +23,7 @@ function isSafari() {
 
     downloadSection.css({
       'display': 'block',
-      'width': renderingWidth + 'em',
+      'min-width': renderingWidth + 'em',
       'position': 'relative',
       'overflow': 'visible'
     });
