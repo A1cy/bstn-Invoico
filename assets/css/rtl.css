@@ -125,9 +125,9 @@ section {
 }
 #download_section {
  display: none;
-}
+ }
 div#download_section {
- width: 55em;
+  width: 55em;
 }
 .invoice_wrap {
   width: 100%;
