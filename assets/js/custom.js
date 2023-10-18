@@ -5,7 +5,7 @@
   $('#generatePDF').on('click', function (event) {
     event.preventDefault();
 
-    var renderingWidth = 63;
+    var renderingWidth = 43;
 
     var downloadSection = $('#download_section').clone();
     $('body').append(downloadSection);
