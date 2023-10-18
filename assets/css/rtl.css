@@ -127,7 +127,9 @@ section {
 display: none;
 }
 
-
+.invoice_wrap {
+  width: 100%;
+}
 /* Add more overrides based on your actual media queries and styles */
 
 
