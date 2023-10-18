@@ -1,4 +1,9 @@
 
+// Detect Safari browser
+function isSafari() {
+  return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+}
+
 (function ($) {
   'use strict';
 
@@ -37,6 +42,12 @@
       }
 
       var dataURI = pdf.output('datauristring');
+    // Safari specific download handling
+    if (isSafari()) {
+      window.open(dataURI);
+      return;
+    }
+    
       var link = document.createElement('a');
       link.href = dataURI;
       link.download = 'MHG-Sales-invoice.pdf';
