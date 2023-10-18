@@ -1200,7 +1200,7 @@ td.md-lg-font.invo-table-title.full-width-cell.inter-700 {
   margin-bottom: 10px; /* Adjust the margin as needed */
 }
 
-.download-link {
+.download-link , button{
   font-size: 16px; /* Adjust the font size as needed */
   color: #007bff; /* Adjust the link color as needed */
   text-decoration: none;
@@ -1208,6 +1208,7 @@ td.md-lg-font.invo-table-title.full-width-cell.inter-700 {
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s;
 }
+
 
 .download-link:hover {
   border-color: #007bff;
