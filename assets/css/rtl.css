@@ -194,7 +194,7 @@ section {
   font-weight: 500;
 }
 .invoice-container {
-  max-width: 880px;
+  max-width: 55em;
   margin: 0 auto;
   padding:  0px 15px;
 }
