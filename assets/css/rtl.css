@@ -128,7 +128,7 @@ section {
 }
 
 div#download_section {
-  width: 63em;
+  width: 53em;
   margin-top: 2em;
 }
 
@@ -788,10 +788,9 @@ tr, th, td {
 /* Responsive CSS for the table */
 
 /* Define a breakpoint for tablets and smaller screens */
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
 
-  /* Make the table wrapper horizontally scrollable */
-  .table-wrapper {
+   .table-wrapper {
     overflow-x: auto;
   }
 
@@ -805,46 +804,41 @@ tr, th, td {
 }
 
   .invoice-table.bstn-detail-table {
-    min-width: 1200px; /* Adjust this value based on your needs */
+    min-width: 1200px;  
   }
 
-  /* Adjust table headers and data for better visibility */
-  .invoice-table.bstn-detail-table th, .invoice-table.bstn-detail-table td {
+   .invoice-table.bstn-detail-table th, .invoice-table.bstn-detail-table td {
     padding: 8px;
-    font-size: 12px; /* Adjust font size for better fit */
-    white-space: nowrap; /* Prevents the content from breaking into the next line */
+    font-size: 12px;  
+    white-space: nowrap;  
   }
 
 }
 
-/* Define a breakpoint for mobile screens */
-@media only screen and (max-width: 480px) {
+ @media only screen and (max-width: 480px) {
 
   .invoice-table.bstn-detail-table th, .invoice-table.bstn-detail-table td {
-    font-size: 10px; /* Further reduce font size for mobile screens */
+    font-size: 10px;  
   }
 
 }
 
 @media only screen and (max-width: 768px) {
-  /* Stack contact and mail vertically */
-  .bstn-conta-mail-wrap > div {
+   .bstn-conta-mail-wrap > div {
       display: block;
       width: 100%;
-      text-align: center; /* Center the content */
-      margin-bottom: 10px; /* Add some space between them */
+      text-align: center;  
+      margin-bottom: 10px;  
   }
 
-  /* Stack print and download buttons vertically */
-  .invo-buttons-wrap > div {
+   .invo-buttons-wrap > div {
       display: block;
       width: 100%;
-      margin-bottom: 10px; /* Add some space between them */
+      margin-bottom: 10px;  
   }
 
-  /* Ensure note text doesn't overflow its container */
-  .invo-note-wrap h3 {
-      word-wrap: break-word; /* Break the text into next line */
+   .invo-note-wrap h3 {
+      word-wrap: break-word;  
   }
   .invo-buttons-wrap {
     display: flex;
@@ -860,7 +854,7 @@ tr, th, td {
   justify-content: space-between;
 }
 
-}
+} */
 
 td.md-lg-font.invo-table-title.full-width-cell.inter-700 { 
   color: #000;
