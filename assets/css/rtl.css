@@ -124,10 +124,11 @@ section {
   border-top: 2px solid #ccc;
 }
 #download_section {
-  display: none;
- max-width: 55em;
+ display: none;
 }
-
+div#download_section {
+ width: 55em;
+}
 .invoice_wrap {
   width: 100%;
 }
