@@ -124,11 +124,11 @@ section {
   border-top: 2px solid #ccc;
 }
 #download_section {
-  display: none;
+
 }
 
 div#download_section {
-  width: 53em;
+  width: 63em;
   margin-top: 2em;
 }
 
@@ -644,16 +644,17 @@ tr, th, td {
 @media only screen and (max-width: 768px) {
 
   /* Adjust the layout for the simple-vat-section */
-  .simple-vat-section {
+  /* .simple-vat-section {
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 20px 0;
-  }
+  } */
 
   /* Adjust the layout for table-wrapper and its child elements */
   .table-wrapper {
-    padding: 20px 0;
+    padding: 10px 0;
+    margin: 10px;
     overflow-x: auto; /* Allows horizontal scrolling if the table exceeds the screen width */
   }
 
