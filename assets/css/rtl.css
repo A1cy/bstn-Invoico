@@ -128,7 +128,7 @@ display: none;
 }
 
 div#download_section {
-  min-width: 53em;
+  width: 53em;
   margin-top: 2em;
 }
 
