@@ -124,8 +124,8 @@ section {
   border-top: 2px solid #ccc;
 }
 #download_section {
-display: none;
-width: 55em;
+  display: none;
+ 
 }
 
 .invoice_wrap {

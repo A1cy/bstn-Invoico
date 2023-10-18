@@ -15,7 +15,7 @@ function isSafari() {
   $('#generatePDF').on('click', function (event) {
     event.preventDefault();
 
-    var renderingWidth = 59;
+    var renderingWidth = 100;
 
     var downloadSection = $('#download_section').clone();
     $('body').append(downloadSection);
@@ -23,7 +23,7 @@ function isSafari() {
 
     downloadSection.css({
       'display': 'block',
-      'width': renderingWidth + 'em',
+      'width': renderingWidth + '%',
       'position': 'relative',
       'overflow': 'visible'
     });
