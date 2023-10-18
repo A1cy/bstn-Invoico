@@ -18,7 +18,7 @@ function isSafari() {
     event.preventDefault();
 
     // Set a fixed rendering width to represent a large screen view
-    var fixedWidth = 1200;  // This represents a typical desktop width
+    var fixedWidth = 1024;  // This represents a typical desktop width
     var deviceWidth = $(window).width();
     var scaleRatio = deviceWidth / fixedWidth;
 
