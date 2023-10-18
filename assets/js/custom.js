@@ -7,7 +7,7 @@
 
     // Determine device width and set the rendering width accordingly
     var deviceWidth = $(window).width();
-    var renderingWidth = deviceWidth < 768 ? deviceWidth : 1520;  // 768px is a common breakpoint for mobile devices
+    var renderingWidth = deviceWidth < 1068 ? deviceWidth : 1520;  // 768px is a common breakpoint for mobile devices
 
     // Clone the original section
     var downloadSection = $('#download_section').clone();
