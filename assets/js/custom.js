@@ -1,3 +1,4 @@
+
 (function ($) {
   'use strict';
 
@@ -19,23 +20,20 @@
 
     var cWidth = downloadSection.width();
     var cHeight = downloadSection.height();
+    var topLeftMargin = 0;
+    var pdfWidth = cWidth + topLeftMargin * 2;
+    // Set the pdfHeight dynamically based on content height, while maintaining the width-to-height ratio
+    var pdfHeight = cHeight + topLeftMargin * 2;
 
-    // Adjusting the PDF height dynamically based on content height
-    var pdfHeight = cHeight;
-    var pdfWidth = cWidth;
-    
-    var canvasImageWidth = cWidth;
-    var canvasImageHeight = cHeight;
     var totalPDFPages = Math.ceil(cHeight / pdfHeight) - 1;
 
     html2canvas(downloadSection[0], { allowTaint: true }).then(function (canvas) {
-      var imgData = canvas.toDataURL('image/jpeg', 0.3);
+      var imgData = canvas.toDataURL('image/jpeg', 0.7);
       var pdf = new jsPDF('p', 'pt', [pdfWidth, pdfHeight]);
-      pdf.addImage(imgData, 'JPG', 0, 0, canvasImageWidth, canvasImageHeight);
-      
+      pdf.addImage(imgData, 'JPG', topLeftMargin, topLeftMargin, cWidth, cHeight);
       for (var i = 1; i <= totalPDFPages; i++) {
         pdf.addPage(pdfWidth, pdfHeight);
-        pdf.addImage(imgData, 'JPG', 0, -(pdfHeight * i), canvasImageWidth, canvasImageHeight);
+        pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + topLeftMargin, cWidth, cHeight);
       }
 
       var dataURI = pdf.output('datauristring');
