@@ -130,6 +130,10 @@ display: none;
 .invoice_wrap {
   width: 100%;
 }
+
+.invoice-table.bstn-detail-table {
+  min-width: 100%;
+}
 /* Add more overrides based on your actual media queries and styles */
 
 
@@ -798,6 +802,7 @@ tr, th, td {
   .invoice-table.bstn-detail-table {
     min-width: 1200px;  
   }
+
 
    .invoice-table.bstn-detail-table th, .invoice-table.bstn-detail-table td {
     padding: 8px;
