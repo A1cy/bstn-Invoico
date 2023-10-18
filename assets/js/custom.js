@@ -6,7 +6,7 @@
     event.preventDefault();
 
     // Determine device width and set the rendering width accordingly
-    var renderingWidth = 1520;  // 768px is a common breakpoint for mobile devices
+    var renderingWidth = 768;  // 768px is a common breakpoint for mobile devices
 
     // Clone the original section
     var downloadSection = $('#download_section').clone();
@@ -33,7 +33,7 @@
     var totalPDFPages = Math.ceil(cHeight / pdfHeight) - 1;
 
     html2canvas(downloadSection[0], { allowTaint: true }).then(function (canvas) {
-      var imgData = canvas.toDataURL('image/png');
+      var imgData = canvas.toDataURL('image/jpeg', 0.3);
       var pdf = new jsPDF('p', 'pt', [pdfWidth, pdfHeight]);
       pdf.addImage(imgData, 'JPG', topLeftMargin, topLeftMargin, canvasImageWidth, canvasImageHeight);
       for (var i = 1; i <= totalPDFPages; i++) {
@@ -51,7 +51,7 @@
       document.body.removeChild(link);
 
     }).catch(function (error) {
-      alert("Error generating PDF (data length: " + imgData.length + "): " + error.message);
+      alert("Error generating PDF: " + error.message);
     }).finally(function () {
       // Remove the clone and show the original section
       downloadSection.remove();
