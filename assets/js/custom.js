@@ -6,7 +6,7 @@
     event.preventDefault();
 
     // Determine device width and set the rendering width accordingly
-    var renderingWidth = 999;  // 768px is a common breakpoint for mobile devices
+    var renderingWidth = 53;  // 768px is a common breakpoint for mobile devices
 
     // Clone the original section
     var downloadSection = $('#download_section').clone();
@@ -18,7 +18,7 @@
     // Adjust styles for the clone
     downloadSection.css({
       'display': 'block',
-      'width': renderingWidth + 'px',
+      'width': renderingWidth + 'em',
       'position': 'relative',
       'overflow': 'visible'
     });

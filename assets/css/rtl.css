@@ -641,35 +641,30 @@ tr, th, td {
 /* Responsive CSS for the entire invoice */
 
 /* Define a breakpoint for tablets and smaller screens */
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
 
-  /* Adjust the layout for the simple-vat-section */
-  /* .simple-vat-section {
+     .simple-vat-section {
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 20px 0;
-  } */
+  }  
 
-  /* Adjust the layout for table-wrapper and its child elements */
-  .table-wrapper {
+   .table-wrapper {
     padding: 10px 0;
     margin: 10px;
-    overflow-x: auto; /* Allows horizontal scrolling if the table exceeds the screen width */
-  }
+    overflow-x: auto; }
 
   .invoice-table {
     width: 100%;
   }
 
-  /* Adjust the layout for the bstn-detail-wrap */
-  .bstn-detail-wrap {
-    grid-template-columns: 1fr; /* Makes it a single column layout */
+   .bstn-detail-wrap {
+    grid-template-columns: 1fr;  
     gap: 20px;
   }
 
-  /* Adjust the layout for the bstn-conta-mail-wrap */
-  .bstn-conta-mail-wrap {
+   .bstn-conta-mail-wrap {
     flex-direction: column;
     gap: 20px;
   }
@@ -734,10 +729,10 @@ tr, th, td {
     height: 1em;
 }
 
-}
+} */
 
 /* Define a breakpoint for mobile screens */
-@media only screen and (max-width: 480px) {
+/* @media only screen and (max-width: 480px) {
 
   
   .invoice-container {
@@ -784,7 +779,7 @@ tr, th, td {
     margin: 5px 0;
   }
 
-}
+} */
 /* Responsive CSS for the table */
 
 /* Define a breakpoint for tablets and smaller screens */
