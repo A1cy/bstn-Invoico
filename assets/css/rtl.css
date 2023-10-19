@@ -894,7 +894,7 @@ td.md-lg-font.invo-table-title.full-width-cell.inter-700 {
    
 }
 .mhg-line { 
-  font-size: 8px;
+  font-size: 9px;
   color: #000;
   text-align: right;
   padding-right: 5px;
@@ -1031,6 +1031,7 @@ td.md-lg-font.invo-table-title.full-width-cell.inter-700 {
   color: #ffffff;
   text-align: right;
   padding: 20px;
+  line-height: 20px;
 }
 
 .custom-grid {
@@ -1111,7 +1112,7 @@ td.md-lg-font.invo-table-title.full-width-cell.inter-700 {
   justify-content: space-between;
   height: auto;
   
-  margin: 1em 2em;
+  margin: 1em 1.5em;
   padding: 0.5em 0;
   position: relative;
   z-index: 5;
@@ -1201,12 +1202,14 @@ td.md-lg-font.invo-table-title.full-width-cell.inter-700 {
   margin-bottom: 10px; /* Adjust the margin as needed */
 }
 
-.download-link , button{
+.download-link  {
   font-size: 16px; /* Adjust the font size as needed */
-  color: #007bff; /* Adjust the link color as needed */
+  color: #73cde1; /* Adjust the link color as needed */
   text-decoration: none;
+  font-weight: 700;
+  margin-right: 5px;
   display: inline-block;
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid #73cde1 ;
   transition: border-color 0.2s;
 }
 
@@ -1278,6 +1281,8 @@ td.md-lg-font.invo-table-title.full-width-cell.inter-700 {
   .purchasing-list-hd {
     padding: 10px;
     font-size: 12px;
+    line-height: 15px;
+
   }
 
   .contact-section {
@@ -1314,9 +1319,11 @@ td.md-lg-font.invo-table-title.full-width-cell.inter-700 {
   }
   .purchasing-list b { 
     font-size: 11px;
+   
   }
   .purchasing-list { 
     font-size: 11px;
+    line-height: 15px;
   }
   
   .invoice-module {
