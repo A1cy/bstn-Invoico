@@ -39,47 +39,49 @@ function isSafari() {
 
       var totalPDFPages = Math.ceil(cHeight / pdfHeight) - 1;
 
-      html2canvas(downloadSection[0], {
-          allowTaint: true,
-          scale: 2  // Increase resolution
-      }).then(function (canvas) {
-          var imgData = canvas.toDataURL('image/jpeg', 1.0);  // Set maximum quality
-          var pdf = new jsPDF('p', 'pt', [pdfWidth, pdfHeight]);
+      // Introduce a short delay before capturing the content
+      setTimeout(function () {
+          html2canvas(downloadSection[0], {
+              allowTaint: true,
+              scale: 2  // Increase resolution
+          }).then(function (canvas) {
+              var imgData = canvas.toDataURL('image/jpeg', 1.0);  // Set maximum quality
+              var pdf = new jsPDF('p', 'pt', [pdfWidth, pdfHeight]);
 
-          // Dynamic scaling based on actual width and height
-          var scale_factor = Math.min(pdfWidth / cWidth, pdfHeight / cHeight);
-          cWidth *= scale_factor;
-          cHeight *= scale_factor;
+              // Dynamic scaling based on actual width and height
+              var scale_factor = Math.min(pdfWidth / cWidth, pdfHeight / cHeight);
+              cWidth *= scale_factor;
+              cHeight *= scale_factor;
 
-          pdf.addImage(imgData, 'JPG', topLeftMargin, topLeftMargin, cWidth, cHeight);
-          for (var i = 1; i <= totalPDFPages; i++) {
-              pdf.addPage(pdfWidth, pdfHeight);
-              pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + topLeftMargin, cWidth, cHeight);
-          }
+              pdf.addImage(imgData, 'JPG', topLeftMargin, topLeftMargin, cWidth, cHeight);
+              for (var i = 1; i <= totalPDFPages; i++) {
+                  pdf.addPage(pdfWidth, pdfHeight);
+                  pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + topLeftMargin, cWidth, cHeight);
+              }
 
-          var dataURI = pdf.output('datauristring');
+              var dataURI = pdf.output('datauristring');
 
-          // Safari specific download handling
-          if (isSafari()) {
-              var blob = pdf.output('blob');
-              var blobURL = window.URL.createObjectURL(blob);
-              window.location.href = blobURL;
-              return;
-          }
+              // Safari specific download handling
+              if (isSafari()) {
+                  var blob = pdf.output('blob');
+                  var blobURL = window.URL.createObjectURL(blob);
+                  window.location.href = blobURL;
+                  return;
+              }
 
-          var link = document.createElement('a');
-          link.href = dataURI;
-          link.download = 'MHG-Sales-invoice.pdf';
-      document.body.appendChild(link);
-      link.click();
- 
-      document.body.removeChild(link);
-    
+              var link = document.createElement('a');
+              link.href = dataURI;
+              link.download = 'MHG-Sales-invoice.pdf';
+              document.body.appendChild(link);
+              link.click();
 
-    }).catch(function (error) {
-      alert("Error generating PDF: " + error.message);
-    }).finally(function () {
-      downloadSection.remove();
-    });
+              document.body.removeChild(link);
+
+          }).catch(function (error) {
+              alert("Error generating PDF: " + error.message);
+          }).finally(function () {
+              downloadSection.remove();
+          });
+      }, 300);  // 300ms delay, adjust as needed
   });
 })(jQuery);
