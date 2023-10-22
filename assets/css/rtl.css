@@ -122,9 +122,9 @@ section {
   height: 100%;
   border-top: 2px solid #ccc;
 }
-#download_section {
+  #download_section {
  display: none;
- }
+ }  
 div#download_section {
   min-width: 55em;
 }
@@ -202,7 +202,7 @@ div#download_section {
   padding: 50px 50px 30px;
 }
 .logo img {
-  height: 60px;
+  height: 75px;
   width: auto;
 }
 .invoice-logo-content {
@@ -311,26 +311,26 @@ p.second-color.sm-sm-text .multi-lang {
 span.line-bstn-en {
   position: absolute;
   border-right: 3px solid #73cde1;
-  height: 10px;
+  height: 17px;
   left: -10px;
 }
 
 span.line-bstn-ar {
   position: absolute;
   border-right: 3px solid #73cde1;
-  height: 10px;
+  height: 17px;
   right: -10px;
 }
 span.col-line-bstn {
   content: "";
   position: relative;
-  border-right: 1px solid #242424c4;
-  height: 6em;
+  border-right: 0.5px solid #24242486;
+  height: 4em;
  
 }
 
 span.mhg-line {
-  border-bottom: 1px solid #73cde1 ;
+  border-bottom: 2px solid #73cde1 ;
  
   margin: 3px 0;
 }
@@ -352,9 +352,11 @@ span.mhg-line {
 .invo-vat-to-wrap {
   text-align: right;
    display: inline-grid;  
+   margin-right: 2em;
 }
 .invo-owner-address {
   color: #888888;
+  line-height: 11px;
 }
 /* .invoice-table.totals thead th{
 
@@ -367,11 +369,12 @@ span.mhg-line {
   justify-content: center;
 }
 
-table.invoice-table.totals.bstn-detail-table { 
+/* table.invoice-table.totals.bstn-detail-table { 
   width: 60%;
-}
+} */
 .table-wrapper.amount {
-  width: 30%;
+  width: 25%;
+  padding-top: 0;
 }
 .ar-text { 
   text-align: right;
@@ -388,7 +391,7 @@ table.invoice-table.totals.bstn-detail-table {
   background-color: #ffffff;
 }
 tr, th, td {
-  border: 1px solid #000;
+  border: 1.3px solid #8888884d;
 }
 .invoice-table td,
 .invoice-table th {
@@ -396,12 +399,12 @@ tr, th, td {
 }
 .invoice-table td {
   color: #000000;
-  font-size: 14px;
-   padding: 5px 2px;
+  font-size: 10px;
+   padding: 2px 2px;
 }
 .invoice-table thead th {
   color: #12151c;
-  padding: 10px 0;
+  padding: 0 0 10px 0;
 }
 .invo-tb-body .invo-tb-row {
   border-bottom: 1px solid #888888;
@@ -547,7 +550,7 @@ tr, th, td {
 .simple-vat-section { 
 
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 
 }
@@ -897,7 +900,8 @@ td.md-lg-font.invo-table-title.full-width-cell.inter-700 {
   font-size: 9px;
   color: #000;
   text-align: right;
-  padding-right: 5px;
+  font-weight: 700;
+ 
 
 
 }
