@@ -122,9 +122,9 @@ section {
   height: 100%;
   border-top: 2px solid #ccc;
 }
-  #download_section {
+   #download_section {
  display: none;
- }  
+ }   
 div#download_section {
   min-width: 55em;
 }
@@ -1207,19 +1207,22 @@ td.md-lg-font.invo-table-title.full-width-cell.inter-700 {
 }
 
 .download-link  {
-  font-size: 16px; /* Adjust the font size as needed */
-  color: #73cde1; /* Adjust the link color as needed */
+  font-size: 14px; /* Adjust the font size as needed */
+  color: #73cde1cd; /* Adjust the link color as needed */
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 650;
   margin-right: 5px;
   display: inline-block;
-  border-bottom: 2px solid #73cde1 ;
-  transition: border-color 0.2s;
+  border-bottom: 2px solid #73cde152 ;
+  transition: border-color 0.6s;
 }
 
 
 .download-link:hover {
-  border-color: #007bff;
+  font-size: 14px; /* Adjust the font size as needed */
+  border-color: #73cde1;
+  color: #73cde1;
+  font-weight: 700;
   display: inline-block;
   /* Adjust the border color on hover as needed */
 }
